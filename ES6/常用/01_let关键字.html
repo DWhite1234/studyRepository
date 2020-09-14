@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>01_let关键字</title>
+    <meta charset="UTF-8">
+    <title>01_let关键字</title>
 </head>
+
 <body>
 
-<button>测试1</button>
-<br>
-<button>测试2</button>
-<br>
-<button>测试3</button>
-<br>
-<!--
+    111111
+    <button>测试1</button>
+    <br>
+    <button>测试2</button>
+    <br>
+    <button>测试3</button>
+    <br>
+    <!--
 ***let
 1. 作用:
   * 与var类似, 用于声明一个变量
@@ -24,35 +27,34 @@
   * 循环遍历加监听
   * 使用let取代var是趋势
 -->
-<script type="text/javascript">
-  console.log(a); // undefined
-  var a = 123;
-  var a = 234;
-  console.log(a);
-  // console.log(b);
-  // console.log(ausername);
-  
-  let ausername = 'wade';
-  // let username = 'kobe2';
-  console.log(ausername);
+    <script type="text/javascript">
+        console.log(a); // undefined
+        var a = 123;
+        var a = 234;
+        console.log(a);
+        // console.log(b);
+        // console.log(ausername);
 
-  function fun() {
-    // let ausername = 'kobe'
-    console.log(ausername);
-    console.log(a);
-  }
+        let ausername = 'wade';
+        // let username = 'kobe2';
+        console.log(ausername);
 
-  fun();
+        function fun() {
+            // let ausername = 'kobe'
+            console.log(ausername);
+            console.log(a);
+        }
 
-  let btns = document.getElementsByTagName('button');
-  for (let i = 0; i < btns.length; i++) {
-    var btn = btns[i];
-    btn.onclick = function () {
-      alert(i);
-    }
-  }
+        fun();
 
-</script>
+        let btns = document.getElementsByTagName('button');
+        for (let i = 0; i < btns.length; i++) {
+            var btn = btns[i];
+            btn.onclick = function() {
+                alert(i);
+            }
+        }
+    </script>
 </body>
 
 </html>
