@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_JSON对象</title>
+</head>
+<body>
+<!--
+1. JSON.stringify(obj/arr)
+  * js对象(数组)转换为json对象(数组)
+2. JSON.parse(json)
+  * json对象(数组)转换为js对象(数组)
+
+-->
+<script type="text/javascript">
+  /*
+  * JSON数据格式：
+  *   用于前后台数据交互
+  * 
+  * */
+  var obj = {name: 'kobe'};
+  console.log(typeof obj);
+  obj = JSON.stringify(obj);
+  console.log(obj);
+  console.log(typeof obj); // JSON对象
+  obj = JSON.parse(obj); // json对象(数组)转换为js对象(数组)
+  console.log(typeof obj);
+
+</script>
+</body>
+</html>

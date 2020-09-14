@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05_简化的对象写法</title>
+</head>
+<body>
+<!--
+简化的对象写法
+* 省略同名的属性值
+* 省略方法的function
+* 例如:
+  let x = 1;
+  let y = 2;
+  let point = {
+    x,
+    y,
+    setX (x) {this.x = x}
+  };
+-->
+<script type="text/javascript">
+  
+  let username = 'kobe';
+  let age = 43;
+  console.log('---------------- 对象的常规书写方式---------------------');
+
+  // let obj = {
+  //   username: username,
+  //   age: age,
+  //   showName: function () {
+  //     console.log(this.username);
+  //   }
+  // }
+  // console.log(obj);
+  // obj.showName();
+
+  console.log('---------------- 对象的简写方式---------------------');
+  let obj = {
+    username,  // 同名的属性可省略 ---> key 和value一样的时候
+    age,
+    showName() { // 省略函数的function，冒号
+      console.log(this.username);
+    }
+  }
+
+  console.log(obj);
+  obj.showName();
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  function iteratorUtil() { // iterator接口 ： 方法 || api
+    console.log('我的方法被调用了', this); // this是遍历的目标数组
+    // console.log(target);// undefined
+    // 缓存this
+    let that = this;
+    ,
+    let index = 0; //  标识指针的起始位置
+    let keys = Object.keys(that);// 获取对象中所有key的数组
+    if(this instanceof Array){ // 遍历数组
+      return { // 生成iterator遍历器对象
+        next:  function (){ // 可以使用箭头函数解决this的指向问题
+          return index < that.length?{value: that[index++], done: false}:{value: that[index++], done: true}
+        }
+      }
+    }else {// 遍历对象
+      return { // 生成iterator遍历器对象
+        next:  function (){ // 可以使用箭头函数解决this的指向问题
+          return index < keys.length?{value: that[keys[index++]], done: false}:{value: that[keys[index++]], done: true}
+        }
+      }
+    }
+  }
+
+  Array.prototype[Symbol.iterator] = iteratorUtil;
+  Object.prototype[Symbol.iterator] = iteratorUtil;
+  let arr = [2,3,4,5];
+  for(let item of arr){
+    console.log(item);
+  }
+  
+  // for of 消费 iterator接口
+  // 三点运算符消费 iterator接口
+  console.log(...arr);
+  
+  let obj = {
+    username: 'kobe',
+    age: 43
+  }
+
+  console.log(Object.keys(obj));
+  
+  for(let item of obj){
+    console.log(item);
+  }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>03_Object扩展</title>
+</head>
+<body>
+<!--
+ES5给Object扩展了一些静态方法, 常用的2个:
+1. Object.create(prototype, [descriptors])
+  * 作用: 以指定对象为原型创建新的对象
+  * 为新的对象指定新的属性, 并对属性进行描述
+    - value : 指定值
+    - writable : 标识当前属性值是否是可修改的, 默认为false
+    - configurable: 标识当前属性是否可以被删除 默认为false
+    - enumerable： 标识当前属性是否能用for in 枚举 默认为false
+2. Object.defineProperties(object, descriptors)
+  * 作用: 为指定对象定义扩展多个属性
+    * get ：用来获取当前属性值得回调函数
+    * set ：修改当前属性值得触发的回调函数，并且实参即为修改后的值
+   * 存取器属性：setter,getter一个用来监视值，一个用来取值
+-->
+<script type="text/javascript">
+  // Object.create(prototype, [descriptors])
+  // var obj = {
+  //   name: 'kobe',
+  //   showName: function () {
+  //     console.log(this.name);
+  //   }
+  // }
+  //
+  // var obj2 = Object.create(obj, {
+  //   sex: {
+  //     value: '男', // 修饰符
+  //     writable: true, // 可以被修改的
+  //     configurable: true,
+  //     enumerable: true
+  //   },
+  //   age: {
+  //     value: 43,
+  //     enumerable: true
+  //   }
+  // });
+  // console.log(obj2.sex);
+  // obj2.sex = '女';
+  // console.log(obj2);
+  // console.log(obj2.sex);
+  //
+  //
+  // for(var i in obj2){ // for in枚举对象的时候除了能够枚举自身的属性之外还会枚举原型的属性
+  //   if(obj2.hasOwnProperty(i)){// 验证是否是自身的属性
+  //     console.log(i);
+  //   }
+  // }
+
+  // delete obj2.sex;
+  // console.log(obj2);
+
+
+
+
+  // Object.defineProperties(object, descriptors)
+  var obj = {
+    name: 'kobe',
+    age: 42
+  }
+
+  Object.defineProperties(obj, { // 配置对象
+    sex: {
+      get: function () { // 获取, get方法的作用： 提供扩展属性的值
+        console.log('get()');
+        console.log(this);
+        return '男';
+      },
+      // set方法用来监视扩展属性的，
+      // 如果扩展属性一旦被修改set就调用，并且会自动将修改之后的属性值自动作为参数传入set函数内部
+      set: function (msg) {
+        console.log(this);
+        console.log('set()', msg);
+      }
+    }
+  })
+  
+  console.log(obj.sex); // 要获取扩展属性的值的时候就会自动调用get方法
+  console.log(obj.sex); // 要获取扩展属性的值的时候就会自动调用get方法
+  console.log(obj.sex); // 要获取扩展属性的值的时候就会自动调用get方法
+  obj.sex = '女';
+  // console.log(obj);
+  console.log(obj.sex);
+  
+  console.log('----------------------------------------------------');
+  var obj2 = {
+    name: 'kobe',
+    age: 42
+  }
+  
+  var obj3 = {};
+  // 枚举obj2对象
+  for(var item in obj2){
+    if(obj2.hasOwnProperty(item)){
+      // console.log(item, ': ', obj2[item]);
+      // obj3[item] = obj2[item];
+      (function (item) {
+        Object.defineProperties(obj3, {
+          [item]: { // 配置对象
+            get: function () {
+              return obj2[item];
+            },
+            set: function (msg) {
+              console.log('set()', msg);
+              obj2[item] = msg;
+            }
+          }
+        })
+      })(item)
+    }
+  }
+  
+  console.log(obj3.name);
+  console.log(obj3.age);
+  obj2.name = 'wade'
+  console.log(obj3.name);
+
+  obj3.name = 'duncan';
+  console.log(obj3.name);
+  console.log(obj2.name);
+  
+</script>
+</body>
+</html>
