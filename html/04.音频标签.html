@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>测试</title>
+    </head>
+    <body>
+        <!-- 
+            提示：目前大多数浏览器不允许自动播放，如果不设置controls
+                  属性，音频文件则无法显示，必须设置controls播放按钮
+                  才能显示
+            autoplay:自动播放，没有属性值
+            controls:播放按钮，没有属性值
+
+            该标签不支持IE8一下的版本
+         -->
+        //写法1
+        <audio src="video/audio.mp3" controls autoplay></audio>
+        //写法2
+        <audio>
+            <!-- 如果以下都不支持，会提示您的浏览器不支持该标签 -->
+            您的浏览器不支持该标签
+            <source src="video/audio.mp3">
+        </audio>
+
+        <!-- 老的音频标签，兼容所有浏览器 
+            type:声明音频的类型和格式
+        -->
+         <embed src="video/audio.mp3" type="audio/mp3">
+         
+        <!-- 总结：兼容处理所有浏览器  -->
+        <audio>
+            <source src="video/audio.mp3">
+            <source src="video/audio.ogg">
+            <embed src="video/audio.mp3" type="audio/mp3">
+        </audio>
+    </body>
+</html>
