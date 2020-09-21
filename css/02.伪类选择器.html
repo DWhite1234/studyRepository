@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>我是一个p2标签</p>
+        <span>我是span</span>
+        <p>我是一个p1标签</p>
+        <div>
+           <span>我是span</span>
+           <p>我是一个p2标签</p>
+           <p>我是一个p3标签</p>
+           <p>我是一个p4标签</p>
+           <span>我是span</span>
+        </div>
+        <p class="p">我是一个p5标签</p>
+        <span>我是span</span>
+        <p>我是一个p6标签</p>
+        <div>
+            <p>我是一个p6标签</p>
+        </div>
+        <div></div>
+    </div>
+    
+    <style> 
+        /* 选择第一个子元素,如果第一个不是p则，不选中 */
+        div p:first-child{color: red;}
+
+        /* 选择第一个p元素 */
+        div p:first-of-type{color: rosybrown;}
+
+        /* 选择最后一个子元素,如果最后一个不是p则，不选中 */
+        div p:last-child{color: red;}
+
+        /* 选择第最后一个p元素 */
+        div p:first-of-type{color: rosybrown;}
+
+        /* 选择指定的第几个子元素,支持自定义 
+        n(全部)  2n(偶数) 2n-1(奇数)
+        even(偶数) odd(奇数)        
+        */
+        div p:nth-child(even){color: seagreen;}
+        div p:nth-of-type(even){color: seagreen;}
+    
+        /* 选择空元素 */
+        div:empty{background-color: red;width: 10px;height: 10px;}
+    
+        /* 否定选择器，除了括号中的都选 ,括号中放选择器*/
+        p:not(.p){background-color: rosybrown;}
+        
+    
+    </style>
+</body>
+</html>

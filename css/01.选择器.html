@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>我是span</span>
+        <p>我是一个p标签</p>
+        <ul>
+            <li class="choose">
+                <ul>
+                    <li>我是li</li>
+                    <li>我是li</li>
+                    <li>我是li</li>
+                </ul>
+            </li>
+            <li class="choose">我是li</li>
+            <li>我是li</li>
+        </ul>
+        <p>我是一个p标签</p>
+        <span>我是span</span>
+        <p>我是一个p标签</p>
+    </div>
+    
+    <style> 
+        /* 1.后代选择器，选择所有后代元素 */
+        ul li{color: royalblue;}
+
+        /* 2.兄弟选择器,选择相邻元素*/
+        span+ul{background-color: red;}
+
+        /* 3.子元素选择器，只选择子代一级的元素 */
+        div>ul>li{color: yellow;}
+
+        /* 4.交集选择器 */
+        li.choose{color: yellowgreen;}
+
+        /* 5.并集选择器 */
+        span,p{color:teal;}
+
+        /* 6.同辈选择器，选择span之后的所有p元素 */
+        span~p{color: red;}
+
+    </style>
+</body>
+</html>

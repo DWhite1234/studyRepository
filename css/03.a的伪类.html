@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">访问过的</a>
+    <br><br>
+    <a href="http://www.baidu.com">没访问过的</a>
+    <br><br>
+    <a href="http://www.baidu.com">没访问过的</a>
+    <a >不正常的连接</a>
+
+    <style> 
+        /* 正常的连接 ，带有href属性的*/
+        a:link{
+            color: red;
+            font-size: 50px;
+        }
+        /* 访问过的连接，出于隐私考虑，只有颜色属性会生效，别的都不会生效 */
+        a:visited{
+            color: red;
+        }
+        /* 移入变色，适用于所有 */
+        a:hover{
+            color: yellowgreen;
+        }
+        /* 长按变色，适用于所有 */
+        a:active{
+            color: aqua;
+        }
+    </style>
+</body>
+</html>
