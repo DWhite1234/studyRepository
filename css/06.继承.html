@@ -1,0 +1,37 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-22 20:52:26
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\06.继承.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+       我是一个div
+       <span>我是一个span
+           <p>我是一个span</p>
+       </span>
+   </div>
+
+   <!-- 属性继承说明：
+    1.所有的背景相关的都不会被继承background-img
+    2.所有的布局相关的不会被继承width，height
+    3.所有的边框不会被继承
+
+    -->
+   <style>
+       div{
+           color: red;
+       }
+   </style>
+</body>
+</html>

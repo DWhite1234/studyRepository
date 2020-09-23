@@ -1,0 +1,41 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-22 21:10:11
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\07.选择器的优先级(权重).html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+       我是一个div
+       <span>我是一个span
+           <p>我是一个span</p>
+       </span>
+   </div>
+
+   <!-- 选择器的优先级
+        1.加了!important的属性最高
+        2.内联样式(1,0,0,0,)
+        3.id选择器(0,1,0,0)
+        4.类选择器和伪类(0,0,1,0)
+        5.元素选择器(0,0,0,1)
+        6.统配选择器*(0,0,0,0)
+        7.继承来的样式没有优先级
+
+    注意点1.：同样的多个选择器无法优先级无法晋级
+        例如11个元素选择器加起来没有1个类选择器高
+    注意点2：同样优先级的样式，下面的样式覆盖上面的
+    -->
+  
+  
+</body>
+</html>

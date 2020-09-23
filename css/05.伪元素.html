@@ -1,0 +1,67 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-22 20:40:48
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\05.伪元素.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>我我我我我我
+        我我我我我我
+        我我我我我我
+        我我我我我我
+        我我我我我我我
+        我我我我我我我我
+        我我我我我
+        我我我我我我我我我我我我我我
+        我我我我我我我我我我我我我
+        我我我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我我我
+        我我我我我我我我我我
+        我我我我我我我我我
+        我我我我我我</p>
+
+        <style>
+            /* 选中标签内容开头的位置 */
+            p::before{
+                content: 'hello';
+                color: blue;
+            }
+            /* 选中标签内容中结束的位置 */
+            p::after{
+                content: "end";
+                color: red;
+            }
+            /* 选中内容中的第一个 */
+            p::first-letter{
+                color: red;
+            }
+            /* 选中内容的第一行 */
+            p::first-line{
+                color: saddlebrown;
+            }
+            /* 对选中的内容添加样式 */
+            p::selection{
+                background-color: green;
+            }
+        </style>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:11:25
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-22 20:26:45
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\04.属性选择器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div title="div1">我是div1</div>
+    <div title="div2">我是div1</div>
+    <div>我是div1</div>
+    <div>我是div1</div>
+    <div>我是div1</div>
+    <div>我是div1</div>
+
+    <style>
+        /* 选择所有带有title属性的标签 */
+        div[title]{
+            background-color: rosybrown;
+        }
+        /* 选择属性title=div1的标签 */
+        div[title=div1]{
+            background-color: saddlebrown;
+        }
+        /* 选择title属性值以d开头的 ,加上i表示忽略大小写 */
+        div[title^='D' i]{
+            color:red;
+        }
+        /* 选择属性值以2结尾的*/
+        div[title$='2']{
+            background-color: red
+        }
+        /* 选择title包含div的 */
+        div[title*='2']{
+            color:black;
+        }
+        
+    </style>
+</body>
+</html>
