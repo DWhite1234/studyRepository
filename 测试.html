@@ -1,3 +1,12 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-17 09:30:35
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-23 13:07:42
+ * @Modified By: zt
+ * @FilePath: \codesRepository\测试.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +15,34 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-    </script>
+    <div></div>
+       <style>
+           div{
+               width: 100px;
+               height: 100px;
+               border: 2px dotted red;
+               background-color: royalblue;
+           }
+       </style>
+       <script>
+           let node=document.querySelector('div')
+           console.log(node.clientLeft,node.clientTop);
+           let lNode=document.createElement("div")
+           lNode.innerHTML='我是子div'
+           lNode.style.color='red'
+           node.appendChild(lNode)
+           
+           let hasNode=document.querySelector('div div:last-child')
+           let newNode=document.createElement('div')
+           newNode.innerText='我是插入的div'
+           newNode.style.border='1px solid black'
+           node.insertBefore(newNode,hasNode)
+           
+           let newNode2=document.createElement('div')
+           newNode2.innerText="我是替换的节点"
+           node.replaceChild(newNode2,hasNode)
+
+           node.removeChild(newNode) 
+       </script>
 </body>
 </html>

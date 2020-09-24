@@ -1,0 +1,78 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-23 21:51:08
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\10.水平布局原理.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+       <div class="d d1 d2 d3 d4">
+
+       </div>
+   </div>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+
+        /* 水平布局原理
+        必须满足公式：
+            margin-left+padding-left+border-left+width(子盒子)+border-right+padding-right+margin-right=width(父盒子)
+
+        注意点：1.当公式不等于的时候,默认给margin-right设置剩余位置的最大值
+               2.有三个属性可以设置auto
+        margin-left  width margin-right    
+         */
+
+        /* 1.width为auto,即width占满全部内容区 */
+        /* .d{
+            width: auto;
+            height: 50px;
+            background-color: black;
+        } */
+        /* 2.margin-left auto ，margin-left会尽量大 父盒子的width-子盒子的width 即表现为靠右*/
+        /* 2.margin-right auto ，margin-right会尽量大 父盒子的width-子盒子的width 即表现为靠左*/
+        /* .d2{
+            width: 50px;
+            height: 50px;
+            margin-left: auto;
+            background-color: blue;
+        } */
+        /* 3.margin-left与margin-right 同时 auto，
+        margin-left与margin-right平分剩余位置，
+        即表现为 水平居中
+        */
+        /* .d3{
+            width: 50px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: chartreuse;
+        } */
+
+         /*总结：
+         由此引出水平居中的公式 margin 0 auto
+           */
+        .d4{
+            width: 50px;
+            height: 50px;
+            background-color: crimson;
+            /* 水平居中 */
+            margin: 0 auto;
+        }
+
+    </style>
+</body>
+</html>

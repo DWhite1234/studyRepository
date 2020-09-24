@@ -1,0 +1,53 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-23 22:02:09
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\09.盒子模型.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="d1">
+       <div class="d2">
+       </div>
+   </div>
+
+   <div class="d3">
+       
+   </div>
+    <style>
+        .d1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid black;
+        }
+        .d2{
+            width: 50px;
+            height: 50px;
+            padding-top: 40px;
+            background-color: green;
+        }
+        /* 重点属性box-sizing
+        box-sizing两个属性
+            content-box:内容区内容固定为width,设置的border和padding等属性会将盒子膨胀
+
+            border-box:盒子的大小固定为width，设置的border和padding属性会压缩内容区的大小
+         */
+        .d3{
+            width: 100px;
+            height: 100px;
+            background-color: darkblue;
+            box-sizing: content-box;
+        }
+    </style>
+</body>
+</html>
