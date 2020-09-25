@@ -1,0 +1,47 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-24 21:47:53
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\14.行内元素的盒子模型.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 文档流的特点：
+        1.行内元素不可以设置高和宽
+
+        2.行内元素可以设置padding,垂直方向会遮盖下面的内容，水平方向会撑开
+
+        3.行内元素可以设置margin但是只有水平方向生效，垂直方向不生效
+
+        4.行内元素可以设置border垂直方向会遮盖下面的内容，水平方向会撑开
+          同时，行内元素的外边距不会折叠，而是会叠加（求和）
+    -->
+
+    <span class="s1">我是span1</span><span class="s2">我是span2</span>
+    <div></div>
+    <style>
+        span{
+            background-color: blanchedalmond;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+        .s1{
+            padding: 10px;
+            margin-left: 10px;
+            border: 20px solid black;
+        }
+    </style>
+</body>
+</html>

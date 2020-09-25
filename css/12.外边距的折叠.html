@@ -1,0 +1,48 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-24 20:54:15
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\12.外边距的折叠.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!-- 
+       1.兄弟元素间垂直方向外边距相邻
+         取两者之间的最大值生效
+       2.父子元素间的垂直方向外边距相邻,子元素的外边距会传递给父元素         
+         1.给父元素设置padding(父元素padding-top：100，同时高度减少100px)
+         2.破坏子元素与父元素的相邻状态(给父元素border或者上内边距都行)        
+    -->
+    <div class="d1">
+        <div class="d2"></div>
+    </div>
+    <style>
+
+        .d1{
+            width: 200px;  
+            height: 200px;
+            /* 1.height: 100px; */
+            background-color:red;
+            /* 1.padding-top: 100px; */
+            /*2.1. padding-top: 1px; */
+            /*2.2. border: 1px solid black; */
+        }
+        .d2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            /*2.1.margin-top: 99px; */
+            /*2.2. margin-top: 99px; */
+        }
+    </style>
+</body>
+</html>

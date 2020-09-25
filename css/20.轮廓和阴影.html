@@ -1,0 +1,47 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-25 21:15:14
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\20.轮廓和阴影.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <a href="#">Hello</a>
+        
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: black;
+            /* 轮廓outline与边框相似,同时不会影响布局 */
+            /* outline: 12px solid chartreuse; */
+
+            /* 阴影
+                第一个参数 inset：可选，内部阴影
+                第二参数 5px：水平偏移量，可以为负值
+                第三个参数5px：垂直偏移量，可以为负值
+                第四个参数5px：阴影的模糊半径
+                第五个参数 red：颜色
+                
+                注意点：阴影可以多层阴影，以逗号分隔
+            */
+            box-shadow:  5px 5px 5px red,
+                    10px 10px 5px orange,
+                    20px 20px 5px green;
+        }
+        
+
+    </style>
+</body>
+</html>

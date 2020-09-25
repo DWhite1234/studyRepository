@@ -1,0 +1,73 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-25 21:56:02
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\21.浮动.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+    <div class="d4"></div>
+    <div></div>
+    <div></div>
+    <span>我是span</span>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+        .d1{
+            float: left;
+            background-color: blanchedalmond;
+        }
+        .d2{
+            float: left;
+            background-color: blue;
+        }    
+        .d3{
+            float: left;
+            background-color: chartreuse;
+        }
+        .d4{
+            clear: both;
+        }
+        /*
+            浮动特点
+            float
+                none：默认值，不浮动
+                left：左浮动
+                right：右浮动
+            1.设置浮动后，该元素就会脱离文档流，后面的元素就会自动上移 
+            2.浮动元素不会超过其上没有浮动的元素
+            3.浮动元素的默认位置不会超过其上的其他浮动元素，只会紧跟，不会超过
+
+            脱离文档流的特点：
+            1.默认宽度被内容撑开
+            2.默认高度被内容撑开
+            3.块元素也不会在独占一行
+            4.行内元素也会脱离文档流
+            5.行内元素脱离文档流后就变成了块元素。特点和块元素一样
+            5.元素不会再占据位置
+         */
+
+         span{
+             float: left;
+             width: 100px;
+             height: 100px;
+             background-color: coral;
+         }
+    </style>
+</body>
+</html>
