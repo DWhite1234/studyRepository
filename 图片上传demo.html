@@ -1,0 +1,49 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-10-05 09:55:35
+ * @LastEditors: zt
+ * @LastEditTime: 2020-10-07 13:17:33
+ * @Modified By: zt
+ * @FilePath: \codesRepository\图片上传demo.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <form action="">
+        <input type="file">图片上传 
+        <input type="button" value="上传">
+    </form>
+
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                firstname:'',
+                secondname:'',
+            },
+            computed:{
+                fullname:{
+                    get:function(){
+                        return this.fullname=this.firstname+this.secondname
+                    },
+                    set:function(){
+                        
+                    }
+                }
+            },
+            methods:{
+                submit(){
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

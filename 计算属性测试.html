@@ -1,0 +1,45 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-10-05 09:55:35
+ * @LastEditors: zt
+ * @LastEditTime: 2020-10-05 11:32:32
+ * @Modified By: zt
+ * @FilePath: \codesRepository\计算属性测试.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model='firstname'>
+        <input type="text" v-model='secondname'>
+        <input type="text" v-model='fullname'>
+    </div>
+
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                firstname:'',
+                secondname:'',
+            },
+            computed:{
+                fullname:{
+                    get:function(){
+                        return this.fullname=this.firstname+this.secondname
+                    },
+                    set:function(){
+                        
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

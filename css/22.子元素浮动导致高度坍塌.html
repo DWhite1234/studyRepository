@@ -1,0 +1,66 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-10-09 21:08:32
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\21.子元素浮动导致高度坍塌.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="box2"></div>
+    </div>
+    
+    <style>
+    /* 
+        高度坍塌：
+          块级元素高度为默认子元素撑开
+            但是当子元素被设置浮动后，脱离文档流后就无法在撑开父元素的高度；
+            将会使父元素高度丢失，进而引起页面的其他元素的位置移动，
+
+        解决方法：BFC(Block Formatting Content)    
+            1.块级格式化环境
+            2.BFC是元素的一个隐藏属性，一旦元素打开了BFC,将会开启一个独立的布局环境
+                这个布局环境有一些特殊的性质
+                    1.开启了BFC的元素子元素的垂直外边距不会传递给父元素
+                    2.开启了BFC的元素不会被浮动的元素覆盖
+                    3.开启了BFC的元素可以包含浮动的子元素
+            3.BFC无法主动开启，需要通过一些属性来开启
+                1.设置元素浮动可以开启BFC(副作用较大)        
+                2.将元素设置为行内块inline-block
+                3.将元素的overflow设置一个非visibility的值
+
+        一般使用overflow：hidden来开启元素的bfc，从而解决高度塌陷的问题        
+        
+        完美解决方案：利用clear
+        在需要解决高度塌陷的父元素添加伪元素after
+
+        .clearFix:::before,  //解决外边距折叠
+        .clearFix:::after{   //解决高度塌陷
+            content:''
+            display:table
+            clear:both
+        }
+     
+     */
+        .box{
+            width: auto;
+            border:10px solid red ;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            float: left;
+        }
+    </style>
+</body>
+</html>
