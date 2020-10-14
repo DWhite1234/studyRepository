@@ -1,0 +1,44 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-10-09 22:06:12
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\25.固定定位.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/font-awesome.css">
+</head>
+<body>
+    <!-- 使用步骤
+    1.将css和fonts文件夹放在同级目录
+    2.引用图标即可
+    -->
+    <i class="fa fa-ravelry" aria-hidden="true"></i>
+
+    <!-- 第二种用法
+        通过伪类来使用字体图标
+    -->
+    <ul>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+    </ul>
+    <style>
+        ul>li::before{
+            /* 指定图标的转义字符 */
+            content: '\f0f3';
+            /* 指定图标的字体，看css文件中主类的字体 ，搜索font-family*/
+            font-family: FontAwesome;
+        }
+    </style>
+</body>
+</html>

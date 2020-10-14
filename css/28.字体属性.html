@@ -1,0 +1,63 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-22 20:36:06
+ * @LastEditors: zt
+ * @LastEditTime: 2020-10-09 22:06:12
+ * @Modified By: zt
+ * @FilePath: \codesRepository\css\25.固定定位.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        字体属性：
+    1.衬线字体 serif
+        - 字体宽度各异，有衬线
+        - Times、Georgia、宋体
+
+    2.无衬线字体 sans-serif
+        - 字体宽度各异，有衬线
+        - Helvetica、Verdana、Arial、微软雅黑  
+    
+    3.等宽字体 monospace
+        - 字体宽度一样，一般用于代码或表格
+        - Courier New、Consolas   
+    
+    4.草书字体 cursive
+        - 模仿人手写的字体
+    
+    5.装饰字体 fantasy
+        - 不属于上述字体   
+     -->
+     <!-- 
+        1.color：设置字体颜色
+        2.font-size：设置字体大小
+        3.font-family：设置字体，可以设置单个字体或者多个字体，逗号隔开，靠前的优先级高
+            font-family：Consolas，微软雅黑
+
+      -->
+    <div class="test">按时大大</div>
+    <style>
+        /* 重点：让用户使用服务器的字体 ，同时要注意字体的版权问题*/
+
+        /* 1.引入字体路径 */
+        @font-face{
+            /* 指定字体名称 */
+            font-family:'test';
+            /* 指定字体路径 */
+            src:url(./fonts/fontawesome-webfont.ttf)
+        }
+
+        /* 2.使用该字体 */
+        .test{
+            font-family:test;
+        }
+    </style>  
+</body>
+</html>

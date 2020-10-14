@@ -1,0 +1,37 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-10-13 12:46:34
+ * @LastEditors: zt
+ * @LastEditTime: 2020-10-13 13:28:02
+ * @Modified By: zt
+ * @FilePath: \codesRepository\闭包和作用域.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 'use strict''
+        var b=3
+        function test(a){
+            var b=0
+            function test2(){
+                var b=1
+                function test3(){
+                    console.log(b);
+                    console.log(window.b);
+                }
+                test3()
+            }
+
+            test2()
+        }
+        test()
+    </script>
+</body>
+</html>
