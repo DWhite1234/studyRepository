@@ -40,9 +40,34 @@
         2.font-size：设置字体大小
         3.font-family：设置字体，可以设置单个字体或者多个字体，逗号隔开，靠前的优先级高
             font-family：Consolas，微软雅黑
+        4.font-weight：设置字体粗细
+            可选值：100-900，bold
+        5.font-variant：small-caps：将英文转成大写     
+        6.font-style：设置斜体，后两个区别不大
+            可选值：normal（默认）
+                    italic（斜体） 
+                    oblique（倾斜）    
+        字体属性的简写
+        font：[bold italic small-caps] [40px '微软雅黑']
+        前三个 顺序没有要求，写不写也没有要求
+        后两个 必须按照 字体大小，字体族的顺序，而且必须要有
 
+        注意：还可以加上行高
+        font：bold italic small-caps 40px/1  (字体大小40px，行高1倍字体大小，也就是垂直居中) '微软雅黑'
       -->
-    <div class="test">按时大大</div>
+
+      <!-- 
+          1.em 默认相对与子元素的，如果子元素没有则相对于父元素
+            1em=1font-size  1em等与一个字体大小
+            例如：font-size：50px
+                  font-size：1em =font-size：50px
+           
+          2.rem  默认相对于根元素html的font-size
+            html的font-size默认为16px
+
+            1rem=16px
+       -->
+    <div class="test">span</div>
     <style>
         /* 重点：让用户使用服务器的字体 ，同时要注意字体的版权问题*/
 
@@ -56,7 +81,7 @@
 
         /* 2.使用该字体 */
         .test{
-            font-family:test;
+            font-variant:small-caps
         }
     </style>  
 </body>
