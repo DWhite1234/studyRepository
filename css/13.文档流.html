@@ -2,8 +2,8 @@
  * @Author: zt
  * @FileName: 
  * @Date: 2020-09-22 20:36:06
- * @LastEditors: zt
- * @LastEditTime: 2020-09-26 08:47:35
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2020-10-21 11:11:08
  * @Modified By: zt
  * @FilePath: \codesRepository\css\13.文档流.html
 -->
@@ -27,9 +27,17 @@
     -->
     <!-- 
         注意点：1.p是块级元素
-               2.p不能嵌套元素
-               3.a能全套任何元素除了他自己
+               2.p不能嵌套块级元素
+               3.a能嵌套任何元素除了他自己
         
      -->
+     <p>我是p <span>我是span</span></p>
+     <!-- 浏览器不会解析p标签嵌套块级元素，会自动拆分出来 -->
+     <p>我是p <div>我是div</div></p>
+     <style>
+         p{
+             border: 1px solid red;
+         }
+     </style>
 </body>
 </html>
