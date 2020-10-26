@@ -1,13 +1,8 @@
-<!--
- * @Author: your name
- * @Date: 2020-10-26 13:54:15
- * @LastEditTime: 2020-10-26 14:39:28
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: \codesRepository\vue-cli\vue-stu\src\App.vue
--->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
