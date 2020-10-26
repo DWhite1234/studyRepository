@@ -1,0 +1,52 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-21 21:21:33
+ * @LastEditTime: 2020-10-26 20:11:53
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \codesRepository\css\34.表格.html
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <ul>
+      <li>
+        购物车
+        <div>购物车列表</div>
+      </li>
+    </ul>
+  </body>
+  <style type="text/css">
+    li{
+      width: 100px;
+      height: 20px;
+      background-color: green;
+      list-style-type: none;
+    }
+    div{
+      width: 200px;
+      height: 0px;
+      background-color: saddlebrown;
+      overflow: hidden;
+      transition: height 10s;;
+    }
+    li:hover div{
+      height: 100px;
+    }
+    /* 显示隐藏的几种方式
+      1.display:none
+      2.visibility:hidden
+      3.高度设置为0,可以做动画效果    
+     */
+
+     /* 
+        过度效果
+        transition：需要过度的属性(width,height,left,top....all) 过度的时间 2s 延迟过度的时间 2s
+        
+      */
+  </style>
+</html>
