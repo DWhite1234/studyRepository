@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-23 17:38:09
+ * @LastEditTime: 2020-10-23 17:40:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \codesRepository\测试图片文字居中.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>颜色渐变</title>
+</head>
+
+<body>
+    <div class="box">
+    </div>
+<!--
+    1.颜色渐变不是background而background-image
+    2.默认渐变颜色平分
+    第一种写法，多色渐变,两个及以上，默认平均分配
+        background-image: linear-gradient(red,yellow)
+    第二种写法，指定方向渐变,to left，to right，to bottom，to top，以及to left top之类左上的写法
+        background-image: linear-gradient(to top,red,yellow)
+    第三种写法，指定角度渐变,0-360deg
+        background-image: linear-gradient(45deg,red,yellow)
+    第四种写法，指定颜色渐变范围,会爆红色下划线，但是有效果，从0-50显示红色，100-300显示黄色，50-100是红色与黄色的渐变,也支持百分比的写法
+        background-image: linear-gradient(red 0px 50px,yellow 100px 300px)
+        background-image: linear-gradient(red 0px 50%,yellow 60% 300px)
+    第五种写法，指定颜色渐变范围,红色为0-50，黄色为200-300，50-200是红色与黄色渐变，也支持百分比的写法
+        background-image: linear-gradient(red 50px,yellow 200px);
+        background-image: linear-gradient(red 50%,yellow 70%);
+    第六种写法，重复渐变，50px-100px是渐变范围，会重复这个范围铺满这个容器，如果不是正好铺满，上下会开始延伸
+        background-image: repeating-linear-gradient(red 50px,yellow 100px)
+-->
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-image: repeating-linear-gradient(red 50px,yellow 100px)
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-23 17:38:09
+ * @LastEditTime: 2020-10-23 17:40:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \codesRepository\测试图片文字居中.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>径向渐变</title>
+</head>
+
+<body>
+    <div class="box">
+<!--        径向渐变
+    第一种写法：指定渐变的形状
+        1.circle:圆形，2.ellipse：椭圆，3.指定半径：50px 100px，x轴50px y轴100px
+        background-image: radial-gradient(circle,red,yellow);
+    第二种写法：指定渐变原点
+        支持九宫格写法，和数值
+        background-image: radial-gradient(at left center,red,yellow);
+        background-image: radial-gradient(at 0 0,red,yellow);
+    第三种写法：指定渐变的半径，渐变效果只以原点和最近或最远边为半径
+        渐变效果只以原点和最近边为半径
+        background-image: radial-gradient(closest-side at 50px 50px,red,yellow);
+         渐变效果只以原点和最角为半径
+        background-image: radial-gradient(closest-corner at 50px 50px,red,yellow);
+        渐变效果只以原点和最远边为半径
+        background-image: radial-gradient(farthest-side at 50px 50px,red,yellow);
+        渐变效果只以原点和最远角为半径
+        background-image: radial-gradient(farthest-corner-side at 50px 50px,red,yellow);
+     第四种写法：指定渐变的范围，与线性渐变基本一致
+        background-image: radial-gradient(red 20%,yellow 70%);
+     第五种写法：指定渐变的重复
+        background-image: repeating-radial-gradient(red 20%,yellow 70%);
+-->
+    </div>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-image: repeating-radial-gradient(red 20%,yellow 70%);
+        }
+    </style>
+</body>
+</html>
