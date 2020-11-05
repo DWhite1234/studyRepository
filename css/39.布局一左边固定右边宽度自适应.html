@@ -1,0 +1,86 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-10-23 17:38:09
+ * @LastEditTime: 2020-10-23 17:40:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \codesRepository\测试图片文字居中.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>布局一左边固定宽度，右边宽度自适应</title>
+</head>
+
+<body>
+    <!-- 原理
+        左边宽度固定后，右边的宽度会随着浏览器的缩小而宽度不够导致右边换行
+            第一步：将右边放在结构上的左边的上面，让左边下移
+                2.宽度不够是因为，元素所占位置不足以放
+                解决方法：将元素移除自身的宽度大小，释放位置，进而使元素能够放下，此时会导致
+                    右边的内容实际占据100%，但是有200px和左边的内容重叠
+            第二部：给左边的内容设置margin-left：-200px;移除自身的宽度，会让左边的内容正好挂在右边内容的尾部
+                    优化：margin-left：-100%，让左边内容放在右边内容的头部
+                    此时大体上的效果实现了，但是由于左边的内容和右边的内容有重叠所以，给右边内容加一个子元素设置
+                    宽度100%,同时给父元素设置一个padding-left:200px最终实现了左边固定右边宽度自适应的效果
+            *双飞翼布局同理，
+            *圣杯布局，不嵌套中间的inner div给他们的父元素设置margin：0 200px；同时给左右两边设置position，利用left和right把
+             左右两边拽回去  
+            *现在的最新布局方式利用calc函数直接左右浮动然后给中间width: calc(100% - 200px);就可以了 减号前后必须要有空格  
+    -->
+    
+    <!-- 1 -->
+    <!-- <div class="box">
+        <div class="left">
+            <div class="inner">右边内容</div>
+        </div>
+        <div class="content">左边内容</div>
+    </div> -->
+    <!-- 1 -->
+    <div class="box">
+        <div class="left2">左边内容</div>
+        <div class="content2">中间内容</div>
+    </div>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+        }
+        .box{
+            width: 100%;
+            height: 500px;
+            background-color: bisque;
+        }
+        .content{
+            width: 200px;
+            height: 500px;
+            background-color:blue;
+            float: left;
+            margin-left: -200px;
+        }
+        .left{
+            width: 100%;
+            height: 500px;
+            background-color: blueviolet;
+            float: left;
+        }
+        .inner{
+            width: 100%;
+        }
+        .left2{
+            width: 200px;
+            height: 500px;
+            background-color:blue;
+            float: left;
+
+        }
+        .content2{
+            width: calc(100% - 200px);
+            height: 500px;
+            background-color: blueviolet;
+            float: left;
+        }
+    </style>
+</html>
