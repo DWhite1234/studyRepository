@@ -1,5 +1,7 @@
 <template>
-    $END$
+    <div>
+        <div class="box">TestLess</div>
+    </div>
 </template>
 
 <script>
@@ -7,7 +9,4 @@
         name: "testLess"
     }
 </script>
-
-<style scoped>
-
-</style>
+<style scoped lang="less"></style>

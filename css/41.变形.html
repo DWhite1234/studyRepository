@@ -8,15 +8,17 @@
 -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title></title>
-  </head>
-  <body>
-      <div class="bigBox">aaaaaaaaa</div>
-      <div class="bigBox2">bbbbbbbbbb</div>
-      <style>
-        /* 如果想要一个元素由内容撑开的同时水平垂直都居中，原来的必须
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+
+<body>
+  <div class="bigBox">aaaaaaaaa</div>
+  <div class="bigBox2">bbbbbbbbbb</div>
+  <style>
+    /* 如果想要一个元素由内容撑开的同时水平垂直都居中，原来的必须
             给出固定的宽高
           width: 300px;
           height: 300px;
@@ -30,19 +32,20 @@
 
           来实现水平垂直都居中
          */
-        .bigBox{
-          position: absolute;
-          top: 0px;
-          bottom: 0px;
-          left: 0;
-          right: 0;
-          width: 300px;
-          height: 300px;
-          background-color: blanchedalmond;
-          margin:  auto;
-          transition: all 2s;
-        }
-        /* 现在有了新的方法
+    .bigBox {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background-color: blanchedalmond;
+      margin: auto;
+      transition: all 2s;
+    }
+
+    /* 现在有了新的方法
             transform：设置平移，放大，缩小，旋转等功能，
             
               可以设置具体数值，也能设置百分比
@@ -60,37 +63,39 @@
 
            实现水平垂直都居中同时内容撑开   
          */
-         /* .bigBox2{
+    /* .bigBox2{
            background-color: aqua;
            position: absolute;
            left: 50%;
            top: 50%;
            transform: translateX(-50%) translateY(-50%);
          } */
-         /* 平移效果 */
-         /* .bigBox:hover{
+    /* 平移效果 */
+    /* .bigBox:hover{
            transform: translateX(100px);
          }
          /*  上下移动 */
-         /* .bigBox:hover{
+    /* .bigBox:hover{
            transform: translateY(100px);
          } */
-         /* 旋转效果 */
-         /* .bigBox:hover{
+    /* 旋转效果 */
+    /* .bigBox:hover{
            transform: rotateZ(180deg)
          }  */
-         /*  放大效果，必须配合视距，视距默认不开启，一般给html设置，一般值为800-1200 */
-         /* 视距该效果会导致元素发生位移 */
-         /* html{
+    /*  放大效果，必须配合视距，视距默认不开启，一般给html设置，一般值为800-1200 */
+    /* 视距该效果会导致元素发生位移 */
+    /* 需要让谁放大，给谁设置perspective，默认中心放大 */
+    /* html{
            perspective: 1200px;
          } */
-         /* .bigBox:hover{
-           transform: translateZ(100px);
+    /* .bigBox:hover{
+           transform: scale(2);//以中心为基点放大2倍
          } */
-         /* 可以设置多种组合,例如先平移在旋转 */
-        .bigBox:hover{   
-          transform: translateX(500px) rotateZ(180deg);
-        }
-      </style>
-  </body>
+    /* 可以设置多种组合,例如先平移在旋转 */
+    .bigBox:hover {
+      transform: translateX(500px) rotateZ(180deg);
+    }
+  </style>
+</body>
+
 </html>

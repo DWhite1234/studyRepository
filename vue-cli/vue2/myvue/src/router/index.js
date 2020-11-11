@@ -171,6 +171,11 @@ const router=new VueRouter({
           }
         ]
       },
+      {
+        name:'testLess',
+        path:'testLess',
+        component:()=>import('../views/testLess.vue')
+      },
       //通配符匹配路由，主要用于处理404,
       //ps:通配符匹配路由，应该放在所有路由的最后
       {
