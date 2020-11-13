@@ -13,6 +13,7 @@
     <meta charset="utf-8">
     <title>less</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 </head>
 
@@ -22,10 +23,24 @@
         1.1写固定值
         <meta name="viewport" content="width=375px">
         1.2自适应所有移动设备
-            device-width：设置视口值
-            initial-scale：缩放比例
+            width=device-width：设置视口值
+            initial-scale=1.0：缩放比例
+            maximum-scale=1.0：最大放大比例
+            user-scalable=0：禁止缩放
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
     -->
+    <!-- 
+        移动端适配方案：
+        1.设计图通常是375的倍数，以3倍为例，设计图为375*3=1125px
+        
+        2.设计图       1125px    100vw
+          某个元素宽度  60px        ?=60/(1125/100 ：一个vw代表的像素比)
+
+        3.利用rem来节省计算 1rem = 1html的font-size大小
+
+        4.设置 html{font-size:60px}  某个元素宽度为1rem，
+        来根据不同的设备设置不同的html的font-size，来达到适配的方案
+     -->
 </body>
 
 </html>
