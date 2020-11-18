@@ -9,18 +9,20 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div class="box">
         <div class="box2"></div>
     </div>
-    
+
     <style>
-    /* 
+        /* 
         高度坍塌：
           块级元素高度为默认子元素撑开
             但是当子元素被设置浮动后，脱离文档流后就无法在撑开父元素的高度；
@@ -43,19 +45,20 @@
         完美解决方案：利用clear
         在需要解决高度塌陷的父元素添加伪元素after
 
-        .clearFix:::before,  //解决外边距折叠
-        .clearFix:::after{   //解决高度塌陷
+        .clearFix::before,  //解决外边距折叠
+        .clearFix::after{   //解决高度塌陷
             content:''
             display:table
             clear:both
         }
      
      */
-        .box{
+        .box {
             width: auto;
-            border:10px solid red ;
+            border: 10px solid red;
         }
-        .box2{
+
+        .box2 {
             width: 100px;
             height: 100px;
             background-color: brown;
@@ -63,4 +66,5 @@
         }
     </style>
 </body>
+
 </html>

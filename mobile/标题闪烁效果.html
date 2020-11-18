@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">[ ]闪烁</title>
+</head>
+
+<body>
+    <script>
+        /*
+        注意点：
+        1.平常的&nbsp;在标题无法识别
+        2.切换状态
+
+        方案：
+        1.用输入法的全角 输入空白字符占位
+        2.切换状态用取余，配合swith..case，也可以if...else
+        */
+        var title1 = '[　　　]闪烁'
+        var title2 = '[新提醒]闪烁'
+        var count = 0
+        setInterval(() => {
+            count++
+            // if (count % 2 == 0) {
+            //     document.title = title1
+            // } else {
+            //     document.title = title2
+            // }
+            switch (count % 2 == 0) {
+                case true: document.title = title1; break
+                case false: document.title = title2; break
+            }
+        }, 200)
+
+    </script>
+</body>
+<style>
+    .title {
+        display: none;
+    }
+</style>
+
+</html>

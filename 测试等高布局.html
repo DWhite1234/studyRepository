@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="id1">11111
+        <ul class="first">
+            <li>11111</li>
+            <li>22222</li>
+            <li>33333</li>
+            <li>44444</li>
+            <li>55555</li>
+        </ul>
+    </div>
+    <div class="id1">22222
+        <ul class="second">
+            <li>11111</li>
+            <li>22222</li>
+            <li>33333</li>
+            <li>44444</li>
+            <li>55555</li>
+        </ul>
+    </div>
+    <div class="id1">33333
+        <ul class="third">
+            <li>11111</li>
+            <li>22222</li>
+            <li>33333</li>
+            <li>44444</li>
+            <li>55555</li>
+        </ul>
+    </div>
+    <div class="id2"></div>
+    <div class="id2"></div>
+    <div class="id2"></div>
+    <script>
+        // var div1 = document.querySelector('.id1')
+        // var first = document.querySelector('.first')
+        // console.log('div1', div1);
+        // div1.onmouseover = function () {
+        //     console.log('first', first);
+        //     first.style = 'display: block'
+        // }
+    </script>
+    <style>
+        .id1 {
+            width: 400px;
+            float: left;
+            background-color: blanchedalmond;
+            border: 1px solid;
+            position: relative;
+        }
+
+        .id2 {
+            width: 400px;
+            height: 100px;
+            background-color: chartreuse;
+        }
+
+        /* div::after {
+            content: '';
+            display: table;
+            clear: both;
+        } */
+
+        ul {
+            /* position: absolute; */
+            /* top: 100px; */
+            display: none;
+        }
+
+        ul li {
+            width: 200px;
+            height: 20px;
+            list-style: none;
+            background-color: brown;
+        }
+
+        div:hover ul {
+            display: block;
+        }
+    </style>
+</body>
+
+</html>

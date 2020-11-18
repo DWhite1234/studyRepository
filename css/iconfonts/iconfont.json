@@ -6,172 +6,25 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "7826085",
+      "name": "close",
+      "font_class": "baseline-close-px",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "3889101",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
       "icon_id": "5449918",
       "name": "左箭头",
       "font_class": "arrow-right",
       "unicode": "e68e",
       "unicode_decimal": 59022
-    },
-    {
-      "icon_id": "6513609",
-      "name": "圆角矩形 1",
-      "font_class": "yuanjiaojuxing",
-      "unicode": "e605",
-      "unicode_decimal": 58885
-    },
-    {
-      "icon_id": "6605905",
-      "name": "65左双箭头",
-      "font_class": "zuoshuangjiantou",
-      "unicode": "e645",
-      "unicode_decimal": 58949
-    },
-    {
-      "icon_id": "8712025",
-      "name": "圆角矩形",
-      "font_class": "yuanjiaojuxing1",
-      "unicode": "e62a",
-      "unicode_decimal": 58922
-    },
-    {
-      "icon_id": "17601072",
-      "name": "钢琴",
-      "font_class": "gangqin",
-      "unicode": "e66c",
-      "unicode_decimal": 58988
-    },
-    {
-      "icon_id": "17601073",
-      "name": "耳机",
-      "font_class": "erji",
-      "unicode": "e66d",
-      "unicode_decimal": 58989
-    },
-    {
-      "icon_id": "17601074",
-      "name": "卡带",
-      "font_class": "kadai",
-      "unicode": "e66e",
-      "unicode_decimal": 58990
-    },
-    {
-      "icon_id": "17601075",
-      "name": "黑胶",
-      "font_class": "heijiao",
-      "unicode": "e66f",
-      "unicode_decimal": 58991
-    },
-    {
-      "icon_id": "17601076",
-      "name": "乐器2",
-      "font_class": "leqi2",
-      "unicode": "e670",
-      "unicode_decimal": 58992
-    },
-    {
-      "icon_id": "17601077",
-      "name": "乐器1",
-      "font_class": "leqi1",
-      "unicode": "e671",
-      "unicode_decimal": 58993
-    },
-    {
-      "icon_id": "17601078",
-      "name": "乐器3",
-      "font_class": "leqi3",
-      "unicode": "e672",
-      "unicode_decimal": 58994
-    },
-    {
-      "icon_id": "17601079",
-      "name": "乐器",
-      "font_class": "leqi",
-      "unicode": "e673",
-      "unicode_decimal": 58995
-    },
-    {
-      "icon_id": "17601080",
-      "name": "乐器7",
-      "font_class": "leqi7",
-      "unicode": "e674",
-      "unicode_decimal": 58996
-    },
-    {
-      "icon_id": "17601081",
-      "name": "乐器5",
-      "font_class": "leqi5",
-      "unicode": "e675",
-      "unicode_decimal": 58997
-    },
-    {
-      "icon_id": "17601082",
-      "name": "乐器6",
-      "font_class": "leqi6",
-      "unicode": "e676",
-      "unicode_decimal": 58998
-    },
-    {
-      "icon_id": "17601083",
-      "name": "乐器4",
-      "font_class": "leqi4",
-      "unicode": "e677",
-      "unicode_decimal": 58999
-    },
-    {
-      "icon_id": "17601084",
-      "name": "麦克风",
-      "font_class": "maikefeng",
-      "unicode": "e678",
-      "unicode_decimal": 59000
-    },
-    {
-      "icon_id": "17601085",
-      "name": "琴",
-      "font_class": "qin",
-      "unicode": "e679",
-      "unicode_decimal": 59001
-    },
-    {
-      "icon_id": "17601086",
-      "name": "麦克风1",
-      "font_class": "maikefeng1",
-      "unicode": "e67a",
-      "unicode_decimal": 59002
-    },
-    {
-      "icon_id": "17601087",
-      "name": "收音机1",
-      "font_class": "shouyinji1",
-      "unicode": "e67b",
-      "unicode_decimal": 59003
-    },
-    {
-      "icon_id": "17601088",
-      "name": "音箱",
-      "font_class": "yinxiang",
-      "unicode": "e67c",
-      "unicode_decimal": 59004
-    },
-    {
-      "icon_id": "17601089",
-      "name": "收音机",
-      "font_class": "shouyinji",
-      "unicode": "e67d",
-      "unicode_decimal": 59005
-    },
-    {
-      "icon_id": "17601090",
-      "name": "手敲琴",
-      "font_class": "shouqiaoqin",
-      "unicode": "e67e",
-      "unicode_decimal": 59006
-    },
-    {
-      "icon_id": "17601091",
-      "name": "乐器8",
-      "font_class": "leqi8",
-      "unicode": "e67f",
-      "unicode_decimal": 59007
     }
   ]
 }
