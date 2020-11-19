@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title"></title>
+</head>
+
+<body>
+    <button>测试事件</button>
+    <script>
+        // 1.复习PC事件
+
+        // //鼠标事件
+        // onlick, onmouseenter, onmousemove, onmouseover, onmouseleave, onmouseout, onmousedown, onmouseup
+
+        // //键盘事件
+        // onkeydown, onkeypress, onkeyup
+
+        // //滚轮事件
+        // onmousewheel
+
+        // //文档事件
+        // onload, onbeforeunload,
+
+        //表单事件
+        //onfocus,onblur,onsubmit, onreset
+        window.onbeforeunload = function () {
+            return '您确定要离开吗'
+        }
+
+        //绑定事件的两种方法
+        var button = document.querySelector('button')
+        button.onclick = function () { }
+        button.addEventListener('click', function () { })
+    </script>
+</body>
+<style>
+</style>
+
+</html>

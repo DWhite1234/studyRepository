@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title"></title>
+</head>
+
+<body>
+    <div>测试事件</div>
+    <script>
+        //移动端事件
+        //    touchstart 元素上触摸开始时触发
+        //    touchmove 元素上触摸移动时触发
+        //    touchend 元素上离开时触发
+        //    touchcancel 元素上触摸开始时触发
+
+        // var btn = document.querySelector('div')
+        // console.log(btn);
+        // btn.addEventListener('touchstart', function () {
+        //     btn.innerHTML = Math.random()
+        // })
+
+        // btn.addEventListener('touchmove', function () {
+        //     btn.style.backgroundColor = 'red'
+        //     btn.innerHTML = Math.random()
+        // })
+
+        //类似键盘抬起事件
+        // btn.addEventListener('touchend', function () {
+        //     btn.style.backgroundColor = 'yellow'
+        //     btn.innerHTML = Math.random()
+        // })
+
+        //来电打断    
+        // btn.addEventListener('touchcancel', function () {
+        //     btn.style.backgroundColor = 'blue'
+        //     btn.innerHTML = Math.random()
+        // })
+
+        // setTimeout(() => {
+        //     alert('打断')
+        // }, 2000)
+
+        // 注意点：
+        // 1、touchmove事件触发后，即使手指离开了元素，touchmove事件也会持续触发
+        // 2、触发touchmove与touchend事件，一定要先触发touchstart
+        // 3、事件的作用在于移动端的界面交互
+    </script>
+</body>
+<style>
+    div {
+        width: 300px;
+        height: 300px;
+        border: 1px solid;
+    }
+</style>
+
+</html>
