@@ -10,7 +10,7 @@
 
 # 2.*computed计算属性
 
-```js
+```html
 *计算属性的应用场景：【经常使用】
 	通过已有属性，计算产生一个需要的新的属性，而且可以直接使用
 
@@ -42,7 +42,7 @@ computed:{
   }
 ```
 
-```js
+```html
 使用:
 1.只用getter，计算属性就是一个函数-----常用
 2.setter，getter都使用，计算属性就是一个包含setter，getter的对象
@@ -55,7 +55,7 @@ computed:{
 
 # 3.watch监视属性
 
-```js
+```html
 data:{
   person：{
     name：'张安',
@@ -76,7 +76,7 @@ watch:{
   }
 ```
 
-```js
+```html
 当被监视的属性值发生变化是自动回调
 注意：监视的必须是属性，属性可以被多层嵌套
 
@@ -84,7 +84,7 @@ watch:{
 
 # 4.动态绑定class和style
 
-```js
+```html
 理解：
 1.class绑定： ：class='xxxx'
   xxx可以是字符串
@@ -113,7 +113,7 @@ Export default {
 
 # 5.条件渲染
 
-```js
+```html
 v-if:直接删除创建节点
 v-eles:直接删除创建节点
 
@@ -133,7 +133,7 @@ v-show:利用样式显示隐藏节点
 
 # 6.列表渲染(数据绑定原理)
 
-```js
+```html
 遍历数组：
 <ul>
   <li v-for="(per,i) in persons" :key="i">
@@ -194,7 +194,7 @@ export default {
 
 ## 面试案例（过滤,排序，v-for）
 
-```js
+```html
 <input type="text" v-model="searchName">
 <ul>
   <li v-for="(per,i) in filterPersons" :key="i">
@@ -238,7 +238,7 @@ computed:{
 
 # 7.事件处理
 
-```js
+```html
 <div id="app">
         <h1>事件监听</h1>
         <button @click="test1">test1</button>
@@ -295,7 +295,7 @@ computed:{
 </script>
 ```
 
-```js
+```html
 更多详细内容查看官方文档
 ```
 
@@ -303,7 +303,7 @@ computed:{
 
 ```java
 1.params传值--需要用name属性，路由中必须配置name
-  router.js:
+  router.html:
 import Main from './views/main.vue'
 import Main2 from './views/main2.vue'
   
@@ -345,7 +345,7 @@ export default new Router({
       alert(this.money)
   }
 2.query传值--需要使用path属性，路由中必须配置path
-  router.js:
+  router.html:
 import Main from './views/main.vue'
 import Main2 from './views/main2.vue'
   
@@ -391,7 +391,7 @@ export default new Router({
 
 # 9.v-model自动收集表单数据
 
-```js
+```html
 
 <div id="demo">
   <form action="/xxx" @submit.prevent="sub">
@@ -427,7 +427,7 @@ export default new Router({
   </form>
 </div>
 
-<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="../html/vue.html"></script>
 <script type="text/javascript">
   new Vue({
     el: '#demo',
@@ -462,7 +462,7 @@ export default new Router({
 
 ![11370083-f279314aef6741db](H:\学习笔记\图片\11370083-f279314aef6741db.webp)
 
-```js
+```html
 一、创建
 1、beforeCreate：这个阶段实例已经初始化，只是数据观察与事件机制尚未形成，不能获取DOM节点（没有data，没有el）
 使用场景：因为此时data和methods都拿不到，所以通常在实例以外使用
@@ -490,7 +490,7 @@ beforeCreate、created、beforeMount、mounted
 
 # 11.过滤器
 
-```js
+```html
 <!--
 1. 理解过滤器
   功能: 对要显示的数据进行特定格式化后再显示
@@ -516,8 +516,8 @@ beforeCreate、created、beforeMount、mounted
   <p>{{time | dataFormat('YYYY-MM-DD')}}</p>
 </div>
 
-<script type="text/javascript" src="../js/vue.js"></script>
-<script src="https://cdn.bootcdn.net/ajax/libs/moment.js/2.27.0/moment.js"></script>
+<script type="text/javascript" src="../html/vue.html"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/moment.html/2.27.0/moment.html"></script>
 <script>
   方法一二：
   Vue.filter('dataFormat',function(value,formatSta){
@@ -548,7 +548,7 @@ beforeCreate、created、beforeMount、mounted
 
 # 12.自定义指令
 
-```js
+```html
 常用内置指令
   v-text : 更新元素的 innerText 不转义，原样输出
   v-html : 更新元素的 innerHTML 转义，按功能转义
@@ -563,7 +563,7 @@ beforeCreate、created、beforeMount、mounted
   v-cloak : 使用它防止闪现表达式, 与css配合: [v-cloak] { display: none }
 ```
 
-```js
+```html
 自定义指令：
 
 <div id="example">
@@ -571,7 +571,7 @@ beforeCreate、created、beforeMount、mounted
   <p v-lower-text="msg2">{{msg2}}</p>
 </div>
 
-<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="../html/vue.html"></script>
 <script type="text/javascript">
 //定义全局指令
   Vue.directive('upper-text',function(el,binding){
@@ -597,7 +597,7 @@ beforeCreate、created、beforeMount、mounted
 
 # 13.vsCode创建一个vue项目
 
-```js
+```html
 1.安装vscode，nodejs
 
 2.安装全局vue-cli
@@ -628,7 +628,7 @@ vue init webpack myvue（项目名）
 
 ## 1.标签通信
 
-```js
+```html
 
 方式一：只传递数据，只适用于父向子组件通信
 父组件:
@@ -683,7 +683,7 @@ export default{
 
 ## 2.自定义事件
 
-```js
+```html
 父组件：
 方式一：自定义事件
 <B v-for="(p,i) in persons" :key="p.id" :p="p" @addPerson="addPerson"></B>
@@ -723,8 +723,8 @@ methods:{
 
 ## 1.全局事件总线
 
-```js
-1.main.js
+```html
+1.main.html
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -775,7 +775,7 @@ new Vue({
 
 2.在组件中引入实例
 
-```js
+```html
 父组件：
 <template>
     <div>
@@ -833,7 +833,7 @@ import { EventBus } from '../EventBus'
 
 # 17.slot插槽
 
-```js
+```html
 将父组件中的带slot标签插入子组件中与之对应的slot插槽中
 
 父组件：
@@ -847,18 +847,18 @@ import { EventBus } from '../EventBus'
 
 # 18.pubsub使用
 
-```js
+```html
 pubsub项目发布在github上
 ```
 
 
 
-```js
+```html
 1.下载pubsub
-npm install pubsub-js
+npm install pubsub-html
 
 2.在子组件中引入，发布消息
-import PubSub from 'pubsub-js'
+import PubSub from 'pubsub-html'
 
 methods:{
          add(){
@@ -874,7 +874,7 @@ methods:{
 
 
 3.在父组件中引入，订阅消息
-import PubSub from 'pubsub-js'
+import PubSub from 'pubsub-html'
 
 mounted(){
   PubSub.subscribe('addP',(msg,p)=>{
@@ -885,7 +885,7 @@ mounted(){
 
 # 19.axios
 
-```js
+```html
 1.下载axios
 npm install axios
 
@@ -967,7 +967,7 @@ Vue.prototype.Qs =Qs
 
 # 20.动态路由传值和接受
 
-```js
+```html
 动态路由配置
 在路径后跟上/:xxx 占位符
 routes: [
@@ -1017,7 +1017,7 @@ https://router.vuejs.org/zh/
 
 # 21.编程式路由导航
 
-```js
+```html
 
 <button @click="jump('td')">去TD</button>
 
@@ -1065,7 +1065,7 @@ methods:{
 
 # 24.缓存路由组件
 
-```js
+```html
 <!-- 指定组件的名称，组件必须命名 -->
   <keep-alive include="" exclude="">
     <router-view></router-view>
@@ -1074,7 +1074,7 @@ methods:{
 
 # 25.vuex
 
-```js
+```html
 1.配置vuex
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -1119,7 +1119,7 @@ export default new Vuex.Store({
     getters
 })
 
-2.注册进man.js
+2.注册进man.html
 import store from './store'
 
 new Vue({
@@ -1130,7 +1130,7 @@ new Vue({
 })
 ```
 
-```js
+```html
 组件使用
 <template>
     <div>
@@ -1174,7 +1174,7 @@ store对象：
 </style>
 ```
 
-```js
+```html
 优化代码：
 <template>
     <div>
@@ -1235,7 +1235,7 @@ import {mapState,mapGetters,mapMutations,mapActions} from 'vuex'
 
 # 26.脚手架2和3的下载
 
-```js
+```html
 2：
 npm install -g vue-cli
 vue init webpack 项目名
@@ -1249,7 +1249,7 @@ vue create 项目名
 
 # 27.跨域
 
-```js
+```html
 第一种以/api为请求头/api/news
 proxy: {
         '/api': {
@@ -1269,7 +1269,7 @@ proxy: 'http://localhost:8081',
 
 **路由中的嵌套路由可以简写，但是router-link必须是完整路径**
 
-```js
+```html
 routes:[
                 {
                     path:'/',
@@ -1309,17 +1309,17 @@ router-link必须是完整路径
 
 # 29.全局安装webpack
 
-```js
+```html
 1.下载nodejs
 ```
 
-```js
+```html
 2.创建新文件夹node_cache和node_global
 ```
 
 ![image-20200824105447563](H:\学习笔记\图片\image-20200824105447563.png)
 
-```js
+```html
 3.配置环境变量
 C:\Program Files\nodejs\node_global
 
@@ -1338,7 +1338,7 @@ npm config set prefix "C:\Program Files\nodejs\node_global"
 npm config set cache "C:\Program Files\nodejs\node_cache"
 ```
 
-```js
+```html
 5.下载webpack
 npm install -g webpack
 npm install -g webpack-cli

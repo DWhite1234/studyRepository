@@ -1,6 +1,6 @@
 # 1.安装
 
-```js
+```html
 1.全选默认
 2.安装后右击桌面选择bash.exe
 3.配置用户名，邮箱
@@ -13,13 +13,13 @@
 
 # 2.git的配置文件地址
 
-```js
+```html
 C:\Users\10179\.gitconfig
 ```
 
 # 3.初始化git仓库
 
-```js
+```html
 1.创建一个新的文件夹(text)
 mkdir text
 2.进入文件夹
@@ -30,7 +30,7 @@ git init
 
 # 4.提交代码
 
-```js
+```html
 1.提交到暂存区
 git add a.txt
 
@@ -48,7 +48,7 @@ git status
 
 # 5.差异对比
 
-```js
+```html
 对比暂存区和工作区同名文件：git diff
 
 对比暂存区和版本区：git diff --cached
@@ -60,7 +60,7 @@ git status
 
 # 6.查看提交日志
 
-```js
+```html
 1.查看详细日志从最近到最远
 git log
 
@@ -70,7 +70,7 @@ git reflog
 
 # 7.版本回退
 
-```js
+```html
 1.回退一次
 git reset --hard HEAD^
 
@@ -78,7 +78,7 @@ git reset --hard HEAD^
 git reset --hard 版本号
 ```
 
-```js
+```html
 下面的基本不用，同时也很危险，会修改工作区的代码
 
 1.用版本库的文件去替换暂存区的全部文件
@@ -96,7 +96,7 @@ git rm --cached x.txt
 
 # 8.删除文件
 
-```js
+```html
 1.删除文件
 git rm a.txt
 2.删除文件夹（不能为空，为空会被忽略）
@@ -109,7 +109,7 @@ git rm -f xxxx
 
 # 10.分支操作
 
-```js
+```html
 1.创建一个分支
 git checkout -b 分支名
 
@@ -141,7 +141,7 @@ git diff 分支1 分支2 文件名
 
 # 12.关联远程仓库
 
-```js
+```html
 1.将本地库连接远程库
 git add origin(别名，可更改) https://github.com/DWhite1234/study.git (远程仓库地址)
 
@@ -170,7 +170,7 @@ git remote remove origin
 
 # 14.带有分支的仓库
 
-```js
+```html
 1.克隆远程库(克隆整个库)
 git clone origin https://github.com/DWhite1234/study.git
 

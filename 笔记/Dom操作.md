@@ -25,7 +25,7 @@
 
 # 2.获取元素的其他方法
 
-```js
+```html
 		<p class="pp" id="ppp">1</p>
 		<p class="pp">2</p>
 		<p class="pp">3</p>
@@ -44,7 +44,7 @@
 
 # 3.innerHTML,innerText，textContext区别
 
-```js
+```html
 1.innerHTML,innerText
 输入时:
  d.innerHTML='<h1>哈哈哈</h1>';//转义   
@@ -58,7 +58,7 @@
     innerText：只会输出文本
 ```
 
-```js
+```html
 2.innerText，textContent
 <p style="visibility: hidden;">ahaha</p>
 <p>dddddd</p>
@@ -69,7 +69,7 @@
 
 # 4.排他操作
 
-```js
+```html
 定义：
 	其他项统一，当前项不统一
  
@@ -82,7 +82,7 @@
 
 # 5.常用鼠标事件
 
-```js
+```html
 onclick/ondbClick(单击，双击)
 onmouseover/onmouseout(移入，移出)
 onmouseenter/onmouseleave(移入，移出)
@@ -92,7 +92,7 @@ onmousemove(移动)
 
 # 6.常用键盘事件
 
-```js
+```html
 keyup/keydown
 ```
 
@@ -102,13 +102,13 @@ keyup/keydown
 
 # 8.获取失去焦点
 
-```js
+```html
 onfocus/onblur
 ```
 
 ## 1.div如何获取焦点
 
-```js
+```html
 div本身是无法获取焦点的，需要添加一个属性才能添加焦点
 
 //添加tabindex后可以获取焦点
@@ -121,7 +121,7 @@ div本身是无法获取焦点的，需要添加一个属性才能添加焦点
 
 # 9.二级菜单
 
-```js
+```html
 难点:
 	对应的li要对应，自己的二级菜单
   
@@ -136,7 +136,7 @@ div本身是无法获取焦点的，需要添加一个属性才能添加焦点
 
 # 10.节点
 
-```js
+```html
 		<div id="d">
 			<span></span>
 			<span></span>
@@ -173,7 +173,7 @@ div本身是无法获取焦点的，需要添加一个属性才能添加焦点
 
 ![image-20200827164828029](../img/image-20200827164828029.png)
 
-```js
+```html
 兼容性封装：获取第一/最后一个元素节点
 
 <ul>
@@ -203,7 +203,7 @@ div本身是无法获取焦点的，需要添加一个属性才能添加焦点
 
 ## 1.document.write()
 
-```js
+```html
 完全不用：
 document.write()只能在页面加载的过程中使用,如果当页面加载完后,再使用会将其它的dom干掉
 ```
@@ -219,7 +219,7 @@ obj.innerHTML:
 
 ## 3.createElement,appendChild创建列表
 
-```js
+```html
 		<script type="text/javascript">
 			var arr=['哪吒','烈火英雄','上海堡垒','速度与激情']
 			//创建元素节点
@@ -238,7 +238,7 @@ obj.innerHTML:
 
 # 12.节点的增删改查
 
-```js
+```html
 <ul>
 			<li>哪吒</li>
 			<li>烈火英雄</li>
@@ -274,7 +274,7 @@ obj.innerHTML:
 
 # 13.事件的绑定与解绑，与兼容浏览器
 
-```js
+```html
 <script type="text/javascript">
 			//dom0(pc)和dom2(app)在事件绑定上的区别
 			//dom0，同一个对象不能添加多个事件，覆盖
@@ -314,7 +314,7 @@ obj.innerHTML:
 
 # 14.事件流
 
-```js
+```html
 事件流：
 	捕获事件流（网景公司）几乎不用
   冒泡事件流（ie）常用
@@ -331,7 +331,7 @@ obj.innerHTML:
 
 # 15.阻止事件冒泡以及兼容处理
 
-```js
+```html
 <script type="text/javascript">
 			btn.onclick=function(event){
 				//在大部分浏览器中event是可以直接使用的，但是有部分ie的
@@ -347,7 +347,7 @@ obj.innerHTML:
 
 # 16.事件冒泡的应用（事件委派）
 
-```js
+```html
 事件委派：
 	原理：冒泡机制
   应用场景：点击新增，同时新增的和原来的要具有相同的行为
@@ -355,7 +355,7 @@ obj.innerHTML:
   优势：避免通弄遍历时，给每个新增元素添加事件，节省了大量的内存
 ```
 
-```js
+```html
 案例：输入框回车键入，新增列表，同时列表移入移出变色
 重点：此处应该注意onmouseover和onmouseenter的区别使用
 <div id="footer">
@@ -400,7 +400,7 @@ obj.innerHTML:
 
 # 17.onmouseenter和onmouseover的区别
 
-```js
+```html
 区别：
 	onmouseenter：进入子元素时，不会有移出父元素，移入子元素的切换
   过程演示： 移入父元素
@@ -421,7 +421,7 @@ obj.innerHTML:
 
 # 19.鼠标位置
 
-```js
+```html
 	client，offset，page的区别，screen
   
   client：相对于当前看到的窗口左上角
@@ -436,7 +436,7 @@ obj.innerHTML:
 
 # 20.定时器(异步)
 
-```js
+```html
 单次定时器：
 setTimeout是延时定时器，是window下的一个全局方法，两个参数
 //第一个参数：回调函数，也就是到时间你想干嘛
@@ -460,7 +460,7 @@ clearInterval(interval)
 
 # 21.元素大小
 
-```js
+```html
 			//总结：
 			//当box2内容未超过盒子时
 			offsetWidth:width+padding+border*2,
@@ -488,7 +488,7 @@ clearInterval(interval)
 			box.scrollTop
 ```
 
-```js
+```html
 Offset系列    只读 
 			offsetWidth      拿的是盒子   内容 + padding + border的宽；
 			offsetHeight   	 拿的是盒子   内容 + padding + border的高；
@@ -527,7 +527,7 @@ Scroll系列
 
 # 22.系统滚动条事件（window.onscroll）
 
-```js
+```html
 <div id="header">
 		</div>
 		<script type="text/javascript">
@@ -555,7 +555,7 @@ Scroll系列
 
 ![image-20200828161136765](../img/image-20200828161136765.png)
 
-```js
+```html
 页面最外层不是html而是初始包含块
 
 当定义了position：absolute时，如果父容器没有定义相对路径，则相对于初始包含块，进行定位
@@ -563,7 +563,7 @@ Scroll系列
 
 # 24.系统滚动条控制
 
-```js
+```html
  html和body这两个元素overflow的scroll属性，控制着系统的滚动条
         系统的滚动条有两个，一个是body身上的  一个是document身上的。我们平时看到的那个滚动条
         是document身上的。，如果我们想要控制系统滚动条哪个显示哪个关闭分以下情况：
@@ -589,7 +589,7 @@ Scroll系列
 
 # 25.拖拽注意点
 
-```js
+```html
 1.拖拽注意鼠标位置的变化
 2.元素位置的移动
 3.处理包含文字时拖拽的默认行为
@@ -663,7 +663,7 @@ var mNode=document.querySelector('#header')
 
 # 26.<span style='color:red;background:背景颜色;font-size:文字大小;font-family:字体;'>*</span>自定义滚动条
 
-```js
+```html
 核心原理：拖拽
 
 注意点：

@@ -2,7 +2,7 @@
 
 # 1.书写位置
 
-```js
+```html
 1.内联式（行内）
 2.外部引用式 link引用
 3.script标签中
@@ -24,7 +24,7 @@
 
 ![image-20200818114545968](../img/image-20200818114545968.png)
 
-```js
+```html
 ==和===的区别：
 
 			var a='6';
@@ -54,7 +54,7 @@
 
 ## 2.隐式转换
 
-```js
+```html
 1.任何和字符串进行+运算，都必须进行拼串
 2.任何和NaN进行运算都是NaN
 3.进行运算都需要进行转数值
@@ -72,14 +72,14 @@
 
 # 6.分支语句
 
-```js
+```html
 单分支：
 if(一般都是一个表达式，但是最终只要有值就行，并且这个值最终会转化为boolean){
    
    }
 ```
 
-```js
+```html
 双分支：
 if(一般都是一个表达式，但是最终只要有值就行，并且这个值最终会转化为boolean){
    
@@ -88,7 +88,7 @@ if(一般都是一个表达式，但是最终只要有值就行，并且这个�
    }
 ```
 
-```js
+```html
 switch...case:
   switch(有值的东西，最后这里面有一个值，不会进行转化){
     case 1:
@@ -106,28 +106,28 @@ switch...case:
   }
 ```
 
-```js
+```html
 for循环：
 	for(var i=0;i<10;i++){
     document.write("1111")
   }
 ```
 
-```js
+```html
 while:
 	while(循环条件){
         循环体
         }
 ```
 
-```js
+```html
 do...while：
 	do{
     循环体
   }while(循环条件)
 ```
 
-```js
+```html
 break和continue的区别：
 	break：跳出整个循环
   continue：跳出当前次循环，继续下一次循环
@@ -135,7 +135,7 @@ break和continue的区别：
 
 # 7.函数
 
-```js
+```html
 1.字面量定义
 	function 函数名(){
     
@@ -153,7 +153,7 @@ break和continue的区别：
 
 ![image-20200819111701747](../img/image-20200819111701747.png)
 
-```js
+```html
 注意点：
 	第一种：
 	<script type="text/javascript">
@@ -191,7 +191,7 @@ break和continue的区别：
 
 ![image-20200819142203377](../img/image-20200819142203377.png)
 
-```js
+```html
 		<script type="text/javascript">
 			//提升前
 			alert(a)
@@ -216,7 +216,7 @@ break和continue的区别：
 
 # 11.IIFE(匿名函数自调用)
 
-```js
+```html
 <script type="text/javascript">
 			
 			// function(){}//本质上是一个匿名函数表达式，但是无法被调用
@@ -244,7 +244,7 @@ break和continue的区别：
 
 # 12.arguments实参伪数组
 
-```js
+```html
 注意点：
 	1.js的形参可以不写
   2.arguments可以获取传递的实参
@@ -252,7 +252,7 @@ break和continue的区别：
   
 ```
 
-```js
+```html
 <script type="text/javascript">
 			第一种：
 			function f1(){
@@ -282,7 +282,7 @@ break和continue的区别：
 
 ## 1.创建对象
 
-```js
+```html
 <script type="text/javascript">
 			//对象的三种定义方式
 			//1.字面量
@@ -311,7 +311,7 @@ break和continue的区别：
 
 ## 2.添加对象属性
 
-```js
+```html
 	<script type="text/javascript">
 			//给对象添加属性
 			var obj={};
@@ -332,7 +332,7 @@ break和continue的区别：
 
 ## 3.删除属性
 
-```js
+```html
 	<script type="text/javascript">
     	var aa='age'
 			var obj={};
@@ -350,7 +350,7 @@ break和continue的区别：
 
 ## 4.遍历对象
 
-```js
+```html
 <script type="text/javascript">
 			//给对象添加属性
 			var obj={};
@@ -379,7 +379,7 @@ break和continue的区别：
 
 ![image-20200821092510630](../img/image-20200821092510630.png)
 
-```js
+```html
 <script type="text/javascript">
 			//1.构造函数this指向实例化对象
 			function Person(name,age){
@@ -413,7 +413,7 @@ break和continue的区别：
 
 ![image-20200821094050895](../img/image-20200821094050895.png)
 
-```js
+```html
 <script type="text/javascript">
 			function Person(name,age){
 				this.name=name;
@@ -437,7 +437,7 @@ break和continue的区别：
 
 **构造函数创建对象的内存开辟过程**
 
-```js
+```html
 1.在栈中开辟全局环境
 2.变量提升(扫描变量，函数)
 3.在堆中开辟对应空间
@@ -455,7 +455,7 @@ break和continue的区别：
 
 ![image-20200821104955709](../img/image-20200821104955709.png)
 
-```js
+```html
 定义：
 	任何【函数对象】(必须是函数对象)在定义的时候都会伴随一个原型对象出现，原型对象默认是Object的实例
   
@@ -467,7 +467,7 @@ break和continue的区别：
   2.实例化对象中只有__proto__隐式原型对象
 ```
 
-```js
+```html
 <script type="text/javascript">
 			function Person(name,age){
 				this.name=name;
@@ -488,7 +488,7 @@ break和continue的区别：
 
 ![image-20200821112437108](../img/image-20200821112437108.png)
 
-```js
+```html
 总结：
 	1.每一个构造函数都有一个自己的原型对象，而这些不同的构造函数的原型对象都有一个公共的父类原型对象Object原型对象。
   2.构造函数自己的原型对象只对自己以及由自己实例化而来的实例对象可见，别人不可见。
@@ -497,7 +497,7 @@ break和continue的区别：
 
 # 16.apply和call的用法
 
-```js
+```html
 作用：
 	让对象可以调用本身不存在，但是别的对象有的方法
   （改变方法的执行者）
@@ -531,7 +531,7 @@ call：hit.call([参数一必须是新的执行对象]a1,[后面是hit需要的�
 
 # 17.typeof和instanceof的用法
 
-```js
+```html
 <script type="text/javascript">
 			var a=13;//number
 			a='111'//string
@@ -571,7 +571,7 @@ call：hit.call([参数一必须是新的执行对象]a1,[后面是hit需要的�
 
 # 19.内置对象Math
 
-```js
+```html
 <script type="text/javascript">
   		//常用数学方法
 			//round,ceil,floor,max,min,random,PI,pow
@@ -592,7 +592,7 @@ call：hit.call([参数一必须是新的执行对象]a1,[后面是hit需要的�
 
 # 20.内置对象Date
 
-```js
+```html
 <script type="text/javascript">
 			var date=new Date();
 			console.log(date.getFullYear())//获取完整年份 2020
@@ -610,7 +610,7 @@ call：hit.call([参数一必须是新的执行对象]a1,[后面是hit需要的�
 
 # 21.包装对象
 
-```js
+```html
 <script type="text/javascript">
 			var a=10;
 			a=new Number()//包装对象
@@ -631,7 +631,7 @@ call：hit.call([参数一必须是新的执行对象]a1,[后面是hit需要的�
 
 ![image-20200822153458519](../img/image-20200822153458519.png)
 
-```js
+```html
 let：申请块级作用域范围的变量
 	以前只有全局作用域和局部作用域
 类似if（）{
@@ -648,59 +648,59 @@ if（）{
 
 ## 1.charAt
 
-```js
+```html
 var str='12asdabv123 gdfjrtyj123 jadskhgkiuy123';
 console.log(str.charAt(8));//返回下标为8的字符  结果：d
 ```
 
 ## 2.charCodeAt
 
-```js
+```html
 
 console.log(str.charCodeAt(8))//返回下标为8的unicode编码  结果：100
 ```
 
 ## 3.concat
 
-```js
+```html
 console.log(str.concat("zzzzzzzzzzz"))//拼串
 ```
 
 ## 4.fromCharCode
 
-```js
+```html
 console.log(String.fromCharCode('49'))//返回unicode编码为96的字符 结果:0
 ```
 
 ## 5.indexOf
 
-```js
+```html
 console.log(str.indexOf('123',7))//返回子串在父串中的第一次的位置，结果：6
 //第一个参数必传，第二个可选（代表从哪里开始搜索），查到返回结果，否则返回-1
 ```
 
 ## 6.lastIndexOf
 
-```js
+```html
 console.log(str.lastIndexOf('123',20))//与indexof作用类似，从后往前搜索
 //从下标20处往前搜索	
 ```
 
 ## 7.length
 
-```js
+```html
 console.log(str.length)//返回字符串的长度
 ```
 
 ## 8.localCompare
 
-```js
+```html
 console.log(str.localeCompare('11'))//比较字符串的大写(从第一位开始比较,unicode码大的大)返回 -1 0 1
 ```
 
 ## 9.match,replace,search匹配正则
 
-```js
+```html
 			console.log(str.match(/123/g))//匹配正则子串，返回包含子串的数组
 			console.log(str.replace(/123/g,'*'))//替换正则子串
 			console.log(str.search(/123/g))//正则搜索,返回子串的位置
@@ -708,13 +708,13 @@ console.log(str.localeCompare('11'))//比较字符串的大写(从第一位开�
 
 ## 10.split
 
-```js
+```html
 console.log(str.split(''))//分隔字符，返回数组
 ```
 
 ## 11.slice,subStr,subString
 
-```js
+```html
 console.log(str.slice(6,-1))//抽取子串，[6,9)
 console.log(str.substr(6,3))//抽取子串，下标6，长度3
 console.log(str.substring(6,-2))//抽取子串，第二个参数为负数时，代表抽取从0-第一个参数的子串	
@@ -722,7 +722,7 @@ console.log(str.substring(6,-2))//抽取子串，第二个参数为负数时，�
 
 ## 12.大小写
 
-```js
+```html
 console.log(str.toLocaleLowerCase())//转换成当前国家语言的小写字符
 console.log(str.toLocaleUpperCase())//转换成当前国家语言的大写字符
 console.log(str.toLowerCase())//转换成小写字符
@@ -731,14 +731,14 @@ console.log(str.toUpperCase())//转换成大写字符
 
 ## 13.tostring
 
-```js
+```html
 console.log(str.toString())//转换成字符串，所有对象都有的方法
 console.log(str.valueOf())//计算值
 ```
 
 ## 14.includes,startWith,endWith,repeat
 
-```js
+```html
 			//ES6新增语法
 			console.log(str.includes('123'))//是否包含123 true、false
 			console.log(str.startsWith('12'))//是否已12开头 true、false
@@ -750,7 +750,7 @@ console.log(str.valueOf())//计算值
 
 ## 1.cocat
 
-```js
+```html
 var arr=[1,7,3,11,5]
 console.log(arr.concat(4,5,6))//返回一个新的数组[1,2,3,4,5,6]
 console.log(arr.concat([4,5,6]))//返回一个新的数组[1,2,3,4,5,6],如果参数是数组，会被拆解然后拼接
@@ -758,31 +758,31 @@ console.log(arr.concat([4,5,6]))//返回一个新的数组[1,2,3,4,5,6],如果�
 
 ## 2.length
 
-```js
+```html
 console.log(arr.length)//返回数组的长度 3
 ```
 
 ## 3.join
 
-```js
+```html
 console.log(arr.join('*'))//将数组转成一个新的字符串，默认以逗号分隔 1*2*3
 ```
 
 ## 4.reverse
 
-```js
+```html
 console.log(arr.reverse())//将原数组翻转 3,2,1
 ```
 
 ## 5.slice
 
-```js
+```html
 console.log(arr.slice(1,3))//抽取一个新的数组下标[1,3)
 ```
 
 ## 6.sort
 
-```js
+```html
 			console.log(arr.sort())//将原数组排序，不传递参数,默认字符串比较(编码)
 
 			console.log(arr.sort(function(a,b){
@@ -811,7 +811,7 @@ console.log(arr.slice(1,3))//抽取一个新的数组下标[1,3)
 
 ## 7.push,pop,unshift,shift
 
-```js
+```html
 			console.log(arr.push('aaa'))//在原数组上末尾新增一个，并返回新数组的长度
 			console.log(arr.pop())//在原数组上末尾删除一个，并返回删除的元素
 			
@@ -821,7 +821,7 @@ console.log(arr.slice(1,3))//抽取一个新的数组下标[1,3)
 
 ## 8.重点splice
 
-```js
+```html
 			//重点splice 可增，可改，可删 
 			//参数解析：第一个参数：下标
 			//		   第二个参数：删除元素的个数
@@ -836,7 +836,7 @@ console.log(arr.slice(1,3))//抽取一个新的数组下标[1,3)
 
 ## 9.indexOf,lastIndexOf
 
-```js
+```html
 var arr=[1,7,3,11,1]
 console.log(arr.indexOf(11,1))
 console.log(arr.lastIndexOf(1,1))
@@ -844,7 +844,7 @@ console.log(arr.lastIndexOf(1,1))
 
 ## 10.forEach
 
-```js
+```html
 //只能遍历数组，没有返回值
 			console.log(arr.forEach(function(item,index){
 				console.log(item)
@@ -855,7 +855,7 @@ console.log(arr.lastIndexOf(1,1))
 
 ## 11.map
 
-```js
+```html
 //遍历数组的同时，可以处理数组，并且，返回一个新的数组
 			console.log(arr.map(function(item,index){
 				return item*2;
@@ -864,7 +864,7 @@ console.log(arr.lastIndexOf(1,1))
 
 ## 12.filter
 
-```js
+```html
 //返回满足过滤条件的新数组
 			console.log(arr.filter(function(item,index){
 				return item<2;
@@ -875,7 +875,7 @@ console.log(arr.lastIndexOf(1,1))
 
 ## 13.es6新语法from，of，find，findIndex
 
-```js
+```html
 			var str='asdada0'
 			console.log(Array.from(str))//将字符串转成数组
 			console.log(Array.of('ss',11,'ls'))//将参数转成数组

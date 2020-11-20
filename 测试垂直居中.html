@@ -17,14 +17,23 @@
 </head>
 
 <body>
-    <div class="div1">
-        <div class="div2"></div>
+    <div class="div1">dddddddddddddddd
+        <div class="div2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
     </div>
     <style>
-        .div1 {
-            width: 1000px;
-            height: 1000px;
+        /* .div1 {
+            width: 300px;
+            height: 300px;
             border: 1px solid red;
+        } */
+        .div1 {
+            border: 1px solid red;
+            position: absolute;
+        }
+
+        .div1::after {
+            content: '';
+            display: table;
         }
 
         .div2 {
@@ -32,9 +41,7 @@
             width: 100px;
             height: 100px;
             background-color: blanchedalmond;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
+            position: absolute;
         }
     </style>
 </body>

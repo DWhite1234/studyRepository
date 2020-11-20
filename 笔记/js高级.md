@@ -6,7 +6,7 @@
 
 # 2.call、apply用法牢记
 
-```js
+```html
 call,apply作用：修改this的指向
 call和apply的区别：
 	call多个参数：接连往后写
@@ -27,7 +27,7 @@ test.apply(obj,[123])
 
 js中的核心是函数，函数的核心是回调函数
 
-```js
+```html
 什么是回调函数：
 	1.你定义了
   2.你没有执行
@@ -36,7 +36,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 4.函数知识
 
-```js
+```html
 1.函数
 	1.函数是特殊的对象
   2.函数具备行为，可以被调用
@@ -66,7 +66,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 5.IIFE(匿名函数自调用)
 
-```js
+```html
 形式：
 1.	(function(){
 		console.log('IIFE')  
@@ -82,7 +82,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 6.new操作符
 
-```js
+```html
 1.创建一个空对象
 2.将this指向这个空对象
 3.调用函数
@@ -91,7 +91,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 7.原型对象
 
-```js
+```html
 1.什么是原型对象
 	1.每个实例都有一个prototype属性，该属性指向的是原型对象(显示原型对象)
 	2.每个实例对象身上都有一个_proto_属性，该属性指向的也是原型对象(隐式原型对象)
@@ -109,7 +109,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 8.原型链
 
-```js
+```html
 什么是原型链
 	1.查找对象的属性的时候，先找自身，如果没有沿着__proto__找原型对象
   2.如果原型对象上没有，继续沿着__proto__找原型对象的原型对象
@@ -124,7 +124,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 9.instanceof
 
-```js
+```html
 作用：判断对象和数组
 语法：A instanceof B 
 
@@ -135,7 +135,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 10.变量提升，函数提升
 
-```js
+```html
 1.js引擎在js代码在正式执行之前会做一些预解析的工作
 2.找关键字：var function
 3.找到var之后将var后面的变量提前申明，但是不赋值
@@ -147,7 +147,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 11.执行上下文
 
-```js
+```html
 1.理解
 	执行上下文抽象的概念，代表了代码执行的环境，包含：执行环境，变量对象，this，作用域链 
 2.流程
@@ -160,7 +160,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 12.作用域
 
-```js
+```html
 1.作用域的理解
 	1.他是抽象的概念
   2.是用来决定代码执行的范围，变量所属的范围
@@ -176,7 +176,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 13.*闭包
 
-```js
+```html
 1.闭包产生的条件
 	1.函数嵌套
   2.内部函数引用外部函数的局部变量
@@ -216,9 +216,9 @@ js中的核心是函数，函数的核心是回调函数
 
 # 14.作用域分类
 
-```js
+```html
 作用域分类：
-	1.静态作用域（词法作用域）js
+	1.静态作用域（词法作用域）html
   2.动态作用域：bash
   
 对比：
@@ -228,7 +228,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 15.对象的注意点
 
-```js
+```html
 1.对象中所有的key都是字符串
 2.obj.toString()="[object Objeect]"
 
@@ -257,7 +257,7 @@ js中的核心是函数，函数的核心是回调函数
 
 # 16.原型链继承
 
-```js'
+```html'
 原型继承原理：使子类称为父类的实例
 
 function Person(name){
@@ -283,7 +283,7 @@ child1.showName()
 
 # 17.借用构造函数继承
 
-```js
+```html
 function Person(name,age){
 	this.name=name
   this.age=age
@@ -301,7 +301,7 @@ function Child(name,age,sex){
 
 # 18.组合继承(构造继承+原型继承)
 
-```js
+```html
 function Person(name,age){
 	this.name=name
   this.age=age
@@ -330,7 +330,7 @@ var child1=new Child('zs',18,'male')
 
 # 19.js单线程
 
-```js
+```html
 1.js代码是单线程的，代码会阻塞
 
 2.js代码分两种
@@ -344,7 +344,7 @@ var child1=new Child('zs',18,'male')
 
 #  20.json
 
-```js
+```html
 转成json格式
 var obj={name:'zs'}
 obj=JSON.stringify(obj)
@@ -357,7 +357,7 @@ obj=JSON.parse(obj)
 
 # 21.*Object.create()
 
-```js
+```html
 Object.create(prototype,[propertites])
 作用：以指定对象为原型创建新的对象，并可以增加新的属性
 value：属性值
@@ -392,7 +392,7 @@ Object.hasOwnProperty(i)
 
 # 22.*Object.definePropertites()
 
-```js
+```html
 Object.definePropertites(obj,props)
 作用：为指定obj拓展多个属性
 get：用来获取当前属性值的回调函数

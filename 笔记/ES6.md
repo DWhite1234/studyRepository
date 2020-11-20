@@ -1,6 +1,6 @@
 # 1.let
 
-```js
+```html
 作用：
 	1.产生块级作用域
   2.不能重复定义
@@ -27,14 +27,14 @@ for(let i=0;i<10;i++){
 
 # 2.const
 
-```js
+```html
 作用：用来定义常量
 其他作用与let相同
 ```
 
 # 3.变量的解构赋值
 
-```js
+```html
 //注意点：使用解构赋值时，会自动声明属性，以便下面调用
 		
 		// 1.对象的解构赋值
@@ -64,7 +64,7 @@ for(let i=0;i<10;i++){
 
 # 4.模板字符串拼接字符串
 
-```js
+```html
 用法：模板字符串必须使用``包含
 变量使用${obj.name}
 
@@ -81,7 +81,7 @@ var obj={
 
 # 5.对象的简写
 
-```js
+```html
 		let name='zs'
 		let age=18
 		var obj={
@@ -105,7 +105,7 @@ var obj={
 
 # 6.箭头函数
 
-```js
+```html
 //箭头函数左边(参数)
 		//1.没有形参时，（）不可以省略
 		let a1=()=>console.log('没有形参时，（）不可以省略')
@@ -140,7 +140,7 @@ var obj={
 
 # 7.rest可变参数(三点运算符)(...运算符）
 
-```js
+```html
 // 区别:
 		// arguments伪数组（只有数组的length属性，没有一般数组方法）
 		// ...运算符,是数组,有数组的一般方法
@@ -172,7 +172,7 @@ var obj={
 
 # 8.形参默认值
 
-```js
+```html
 //形参默认值的值，根据实参类型而定
 		function person(x=1,y=2){
 			this.x=x,
@@ -186,7 +186,7 @@ var obj={
 
 ![image-20200911180925558](../img/image-20200911180925558.png)
 
-```js
+```html
 for of 遍历的原理：只适用于数组（因为数组具有Symbol(Symbol.iterator)接口）
 for(let itme of arr){
   console.log(item)
@@ -244,7 +244,7 @@ function iteratorUtil() { // iterator接口 ： 方法 || api
 
 # 10.类
 
-```js
+```html
 类的作用：定义一种类型，每个实例化出来的对象都是该类型的
 优点：减少重复代码
 体现：constructor构造器的属性是实例的属性，showInfo方法不放在实例内，方法原型对象Person上，所有实例对象可见
@@ -282,7 +282,7 @@ function iteratorUtil() { // iterator接口 ： 方法 || api
 
 # 11.类的继承，父类方法的重写
 
-```js
+```html
 				//父类
         class Person{
             constructor(name,age){
@@ -318,7 +318,7 @@ function iteratorUtil() { // iterator接口 ： 方法 || api
 
 #  12.ES6其他新增方法
 
-```js
+```html
 //克隆，拷贝属性，会返回新对象，同时也改变原对象
  let obj={}
  let obj2={name:'zs'}
@@ -329,7 +329,7 @@ function iteratorUtil() { // iterator接口 ： 方法 || api
  console.log(result)
 ```
 
-```js
+```html
 //直接操作__proto__属性
 let obj={name:'zs',age:12}
 
@@ -339,7 +339,7 @@ obj2.__proto__=obj
 console.log(obj2)
 ```
 
-```js
+```html
 //数组去重
 console.log("----------------------ES5数组去重--------------")
        let arr=[1,2,3,4,5,1,2,3]
@@ -377,7 +377,7 @@ console.log("----------------------ES5数组去重--------------")
 
 # 13.定义检测数据类型的方法
 
-```js
+```html
 原理：Object的toString()方法可以将数据类型打印出来
 例如：let obj={}，let obj=[1,2]
 结果：[object Object],     1,2
@@ -393,7 +393,7 @@ console.log("----------------------ES5数组去重--------------")
 
 # 14.深拷贝，浅拷贝
 
-```js
+```html
 # 深拷贝：当数组或对象中包含引用类型时，对该数组或对象的复制属性给另一个对象后，新的对象改变其中引用类型的值的时候，原数组或对象的引用类型中的值不会被改变
 
 # 浅拷贝：当数组或对象中包含引用类型时，对该数组或对象的复制属性给另一个对象后，新的对象改变其中引用类型的值的时候，原数组或对象的引用类型中的值会改变
@@ -443,7 +443,7 @@ console.log("----------------------ES5数组去重--------------")
 
 # 15.ES7
 
-```js
+```html
 1.幂运算
 console.log(3**3) //27
 
