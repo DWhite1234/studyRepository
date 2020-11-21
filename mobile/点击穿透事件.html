@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">-->
+    <!--    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no">-->
 </head>
-<body>
-<div class="div1"></div>
-<script>
-    //    产生原因:
-    //     touchstart触发后会默认触发元素的click事件,如果没有设置完美视口,事件触发的时间间隔为300ms左右,设置完美视口时间间隔为50ms左右
-    // 解决方法1:当前点击阻止默认行为
-    // 解决方法2:给顶级元素阻止默认行为 document
-    // document.documentElement.addEventListener('',function(e){
-    //      e.preventDefault()
-    //      },{
-    //          passive:false//指定阻止默认行为不失效
-    //      }
-    // )
-    // 解决方法3:给包裹元素阻止默认行为
-    //     <div class='app'>
-    //          xxxxxxxx
-    //     </div>
-    // app.documentElement.addEventListener('',function(e){
-    //      e.preventDefault()
-    //      },{
-    //          passive:false//指定阻止默认行为不失效
-    //      }
-    // )
-    //
-    // 测试间隔时间
-    var t1=0
-    var t2=0
-    var divNode1=document.querySelector('.div1')
-    console.log('divNode1',divNode1)
-    divNode1.addEventListener('touchstart',function () {
-        console.log('touchstart')
-        t1=Date.now()
-        console.log(t1)
-    })
-    var divNode2=document.querySelector('.div1')
-    divNode1.addEventListener('click',()=>{
-        console.log('onclick')
-        t2=Date.now()
-        console.log(t2-t1)
-    })
 
-</script>
-<style>
-    div{
-        width: 500px;
-        height: 500px;
-        background-color: #42b983;
-    }
-</style>
+<body>
+    <div class="div1" data-href='https://www.baidu.com'></div>
+    <script>
+        //  产生原因:
+        //   touchstart触发后会默认触发元素的click事件,如果没有设置完美视口,事件触发的时间间隔为300ms左右,设置完美视口时间间隔为50ms左右
+        // 解决方法1:当前点击阻止默认行为
+        // 解决方法2:给顶级元素阻止默认行为 document
+        // document.documentElement.addEventListener('',function(e){
+        //      e.preventDefault()
+        //      },{
+        //          passive:false//指定阻止默认行为不失效
+        //      }
+        // )
+        // 解决方法3:给包裹元素阻止默认行为
+        //     <div class='app'>
+        //          xxxxxxxx
+        //     </div>
+        // app.documentElement.addEventListener('',function(e){
+        //      e.preventDefault()
+        //      },{
+        //          passive:false//指定阻止默认行为不失效
+        //      }
+        // )
+        // 解决方法4: 不使用有默认事件的a标签等,不绑定click事件,绑定touchstart事件
+        //
+        // 解决方法5: 
+        // 测试间隔时间
+        var t1 = 0
+        var t2 = 0
+        var divNode1 = document.querySelector('.div1')
+        console.log('divNode1', divNode1)
+        divNode1.addEventListener('touchstart', function () {
+            console.log('touchstart')
+            t1 = Date.now()
+            console.log(t1)
+        })
+        var divNode2 = document.querySelector('.div1')
+        divNode1.addEventListener('click', () => {
+            console.log('onclick')
+            t2 = Date.now()
+            console.log(t2 - t1)
+        })
+
+        console.log('this.dataset', document.querySelector('.div1').dataset);
+
+    </script>
+    <style>
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: #42b983;
+        }
+    </style>
 </body>
+
 </html>

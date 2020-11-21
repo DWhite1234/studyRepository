@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="width: 500px;height: 500px;background-color: blueviolet;">
+		dddddddd
+	</div>
+    <script>
+        var divNode = document.querySelector('div')
+		
+        divNode.addEventListener('touchstart', (e) => {
+			console.log('111111');
+            // changedTouches 属性为移动端同当前元素同时按下的手指数(数组)
+			divNode.innerHTML=e.changedTouches.length
+            console.log('e', e.changedTouches.length);
+        })
+		alert('1111')
+    </script>
+</body>
+
+</html>
