@@ -9,18 +9,20 @@
 
 <body>
     <div style="width: 500px;height: 500px;background-color: blueviolet;">
-		dddddddd
 	</div>
     <script>
         var divNode = document.querySelector('div')
 		
         divNode.addEventListener('touchstart', (e) => {
-			console.log('111111');
             // changedTouches 属性为移动端同当前元素同时按下的手指数(数组)
 			divNode.innerHTML=e.changedTouches.length
-            console.log('e', e.changedTouches.length);
+			// changedTouches 属性为移动端同当前元素总共点击了几次(数组)
+			divNode.innerHTML=e.targetTouches.length
+			// changedTouches 属性为移动端当前屏幕上的所有触点信息(数组)
+			divNode.innerHTML=e.touches.length
+			
+			// 其他几个事件也是关注这是三个属性
         })
-		alert('1111')
     </script>
 </body>
 

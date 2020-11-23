@@ -8,12 +8,16 @@
 -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title></title>
-  </head>
-  <body>
-      <!-- 
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<!-- <div style="width: 100px;height: 100px;background-color: aquamarine;"></div> -->
+<img src="./img/窗台美女.jpg" alt="" style="width: 100px;" class="aa">
+
+<body>
+  <!-- 
         transition-propertity：可以指定需要过度的属性，多个属性用逗号隔开,或者用all执行全部属性
           transition-propertity：width，height,all
         transition-duration：可以指定过度的时间单位有s，ms
@@ -29,5 +33,27 @@
         
           简写属性：transition：left 持续时间2s 延迟时间3s step(6,start) [持续时间在前，延迟时间在后，别的顺序随意]
        -->
-  </body>
+  <script>
+    // var divNode = document.querySelector('div')
+    // divNode.onclick = () => {
+    //   divNode.setAttribute('class', 'active')
+    // }
+    var imgNode = document.querySelector('.aa')
+    console.log('img');
+    imgNode.onclick = () => {
+      imgNode.setAttribute('class', 'active')
+    }
+  </script>
+  <style>
+    div {
+      transform: rotateZ(0);
+    }
+
+    .active {
+      transform: rotateZ(180deg);
+      transition: all 2s;
+    }
+  </style>
+</body>
+
 </html>

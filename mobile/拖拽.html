@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var divNode = document.querySelector('div')
+        divNode.addEventListener('touchstart', (e) => {
+            this.x = e.changedTouches[0].clientX
+            this.y = e.changedTouches[0].clientY
+            divNode.innerHTML = 'x:' + x + '<br>' + 'y:' + y + '<br>'
+
+            //获取当前元素的偏移量
+            startX = divNode.offsetLeft
+            startY = divNode.offsetTop
+        })
+        divNode.addEventListener('touchmove', (e) => {
+            console.log('e', e);
+            this.x2 = e.changedTouches[0].clientX
+            this.y2 = e.changedTouches[0].clientY
+            divNode.innerHTML = 'x:' + x + '<br>' + 'y:' + y + '<br>'
+
+            //获取拖拽过程中的偏移量    
+            console.log('this', divNode);
+            var endX = this.x2 - this.x + startX
+            var endY = this.y2 - this.y + startY
+            divNode.style.left = endX + 'px'
+            divNode.style.top = endY + 'px'
+        })
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="widows: 100px;height: 100px;background-color: aqua;"></div>
+    <script>
+        var divNode = document.querySelector('div')
+        divNode.addEventListener('touchstart', (e) => {
+            console.log('e', e);
+            var x = e.changedTouches[0].clientX
+            var y = e.changedTouches[0].clientY
+            divNode.innerHTML = 'x:' + x + '<br>' + 'y:' + y + '<br>'
+        })
+        divNode.addEventListener('touchmove', (e) => {
+            console.log('e', e);
+            var x = e.changedTouches[0].clientX
+            var y = e.changedTouches[0].clientY
+            divNode.innerHTML = 'x:' + x + '<br>' + 'y:' + y + '<br>'
+        })
+    </script>
+</body>
+
+</html>

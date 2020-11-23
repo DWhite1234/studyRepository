@@ -1,0 +1,47 @@
+<!--
+ * @Author: zt
+ * @FileName: 
+ * @Date: 2020-09-17 09:30:35
+ * @LastEditors: zt
+ * @LastEditTime: 2020-09-23 13:07:42
+ * @Modified By: zt
+ * @FilePath: \codesRepository\测试.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="big">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        var node = document.querySelector('.box')
+        console.log('node', node);
+        setTimeout(function () {
+            console.log(node.clientWidth);
+        }, 2000)
+
+    </script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+        }
+
+        .big {
+            width: 500px;
+            height: 500px;
+            background-color: rosybrown;
+        }
+    </style>
+</body>
+
+</html>

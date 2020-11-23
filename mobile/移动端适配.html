@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" style='font-size:100px'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 适配方式:
+    1.viewport 适配width=设计稿的宽度
+        将<meta name="viewport" content="width=设计稿的宽度 initial-scale=1.0">
+    
+    2.rem适配1--rem设置为固定值
+        1.假设当前设计图为750
+        2.设置html的font-size=100px
+        3.利用js代码动态实现等比缩放
+    -->
+    <!-- <div style="width:1rem;height: 1rem;background-color: aquamarine;"></div>
+
+    <script>
+        //利用窗口大小改变的函数onresize
+        window.onresize = function () {
+            //font-size:100px
+            //默认以iPhone6的视口为参照 width=375
+            //当前视口为 document.documentElemnt.clientWidth
+            //换算公式为 当前font-size=100*document.documentElemnt.clientWidth/375
+
+            // let nowWidth = document.documentElement.clientWidth
+            // console.log('nowWidth', nowWidth);
+            // let nowFontSize = 100 * nowWidth / 375
+            // console.log('nowFontSize', nowFontSize);
+            // console.log(document.documentElement.style);
+            // document.documentElement.style.fontSize = nowFontSize + 'px'
+
+
+            //优化代码
+            document.documentElement.style.fontSize = 100 * document.documentElement.clientWidth / 375 + 'px'
+        }
+    </script> -->
+
+    <!-- 3.rem适配2--rem设置为比例值
+        1.默认font-size为当前窗口的1/10
+        2.先将div的px转为根据rem
+        3.动态获取当前的窗口设置font-size
+
+
+    <script>
+        //利用窗口大小改变的函数onresize
+        window.onresize = function () {
+            //当前视口为 document.documentElemnt.clientWidth
+            //换算公式为 当前font-size=document.documentElemnt.clientWidth/10
+            document.documentElement.style.fontSize = document.documentElemnt.clientWidth/10+ 'px'
+        }
+    </script> -->
+    -->
+
+    <!-- 4.rem适配3--rem设置为比例值与less结合
+            1.默认font-size为当前窗口的1/10
+            2.定义一个rem变量
+                @fontSize:设计稿宽度/10
+                @fontSize:750/10rem
+            3.写css单位时,设计稿是多少就写多少
+                width:300/@fontSize    
+        <script>
+            //利用窗口大小改变的函数onresize
+            window.onresize = function () {
+                //当前视口为 document.documentElemnt.clientWidth
+                //换算公式为 当前font-size=document.documentElemnt.clientWidth/10
+                document.documentElement.style.fontSize = document.documentElemnt.clientWidth/10+ 'px'
+            }
+        </script> -->
+    -->
+</body>
+
+</html>
