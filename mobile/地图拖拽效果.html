@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <img src="../css/img/窗台美女.jpg" alt="" class="img">
+    </div>
+    <script>
+        var divNode = document.querySelector('div')
+        var imgNode = document.querySelector('img')
+        divNode.addEventListener('touchstart', (e) => {
+            divNode.x = e.changedTouches[0].clientX
+            divNode.left = imgNode.offsetLeft
+            divNode.y = e.changedTouches[0].clientY
+            divNode.top = imgNode.offsetTop
+            // divNode.innerHTML = 'x:' + divNode.x + '<br>' + 'y:' + divNode.y + '<br>'
+
+            //获取当前元素的偏移量
+            // startX = divNode.offsetLeft
+            // startY = divNode.offsetTop
+        })
+        divNode.addEventListener('touchmove', (e) => {
+            console.log('e', e);
+           divNode.x2 = e.changedTouches[0].clientX
+            divNode.y2 = e.changedTouches[0].clientY
+            // divNode.innerHTML = 'x:' + divNode.x2 + '<br>' + 'y:' + divNode.y2 + '<br>'
+            console.log('2222');
+            //获取拖拽过程中的偏移量    
+            console.log('this', divNode);
+            var endX = divNode.x2 - divNode.x + divNode.left
+            var endY = divNode.y2 - divNode.y + divNode.top
+            imgNode.style.left = endX + 'px'
+            imgNode.style.top = endY + 'px'
+        })
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 1px solid;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .img {
+            position: absolute;
+            left: -200px;
+        }
+    </style>
+</body>
+
+</html>

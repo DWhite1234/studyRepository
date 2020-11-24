@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="swiper-contaier">
+        <div class="swiper-wraper">
+            <div class="swiper-slide"><img src="../css/img/窗台美女.jpg" alt="" class="img"></div>
+            <div class="swiper-slide"><img src="../css/img/古装女.jpg" alt="" class="img"></div>
+            <div class="swiper-slide"><img src="../css/img/排球女.jpg" alt="" class="img"></div>
+            <div class="swiper-slide"><img src="../css/img/绿跑.jpg" alt="" class="img"></div>
+            <div class="swiper-slide"><img src="../css/img/田园.jpg" alt="" class="img"></div>
+        </div>
+    </div>
+    <script>
+        var divNode = document.querySelector('.swiper-contaier')
+        var imgNode = document.querySelector('.swiper-wraper')
+        divNode.addEventListener('touchstart', (e) => {
+            divNode.x = e.changedTouches[0].clientX
+            // divNode.innerHTML = 'x:' + divNode.x + '<br>' + 'y:' + divNode.y + '<br>'
+
+            //获取当前元素的偏移量
+            // startX = divNode.offsetLeft
+            // startY = divNode.offsetTop
+        })
+        divNode.addEventListener('touchmove', (e) => {
+            divNode.x2 = e.changedTouches[0].clientX
+        })
+        divNode.addEventListener('touchend', (e) => {
+            var endX = divNode.x2 - divNode.x
+            console.log('endX', endX);
+            var nowLeft = imgNode.offsetLeft
+            console.log('nowLeft', nowLeft);
+            imgNode.style.left = endX < 0 ? nowLeft - 300 + 'px' : nowLeft + 300 + 'px'
+            console.log('imgNode.style.left', imgNode.style.left);
+        })
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-contaier {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 1px solid;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+
+        }
+
+        .swiper-wraper {
+            display: flex;
+            width: 1500px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+        }
+
+        .swiper-slide img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #box {
+            width: 3rem;
+            height: 3rem;
+            border: solid 1px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        //设置 font-size 的值
+        var fontSize = 50;
+        //设置html根标签的 font-size
+        document.documentElement.style.fontSize = fontSize + 'px';
+
+        // 1. 整体的缩小  initial-scale  设备独立像素宽度  / 布局视口的宽度  2   375  => 750  0.5
+        var dpr = window.devicePixelRatio;
+        var initialScale = 1 / dpr;
+
+        //获取 meta 标签
+        var meta = document.querySelector('meta[name=viewport]');
+
+        //设置 content 属性
+        meta.content = 'user-scalable=no,initial-scale=' + initialScale;
+
+        // 2. 内容进行放大
+        var newFontSize = fontSize * dpr;
+
+        document.documentElement.style.fontSize = newFontSize + 'px';
+    </script>
+</body>
+
+</html>
