@@ -16,29 +16,129 @@
             <div class="swiper-slide"><img src="../css/img/绿跑.jpg" alt="" class="img"></div>
             <div class="swiper-slide"><img src="../css/img/田园.jpg" alt="" class="img"></div>
         </div>
+        <div class="swiper-pointers">
+            <!-- <div class="pointer active"></div>
+            <div class="pointer"></div>
+            <div class="pointer"></div>
+            <div class="pointer"></div>
+            <div class="pointer"></div> -->
+        </div>
     </div>
     <script>
         var divNode = document.querySelector('.swiper-contaier')
         var imgNode = document.querySelector('.swiper-wraper')
+        var index = 0
+        var len = divNode.querySelectorAll('.swiper-slide').length
+        //初始化导航点
+        var pointers = null
+        //获取导航点包裹元素
+        var pagination = divNode.querySelector('.swiper-pointers');
         divNode.addEventListener('touchstart', (e) => {
+			
             divNode.x = e.changedTouches[0].clientX
-            // divNode.innerHTML = 'x:' + divNode.x + '<br>' + 'y:' + divNode.y + '<br>'
-
-            //获取当前元素的偏移量
-            // startX = divNode.offsetLeft
-            // startY = divNode.offsetTop
+            //获取图片元素的偏移量
+            divNode.startX = imgNode.offsetLeft
+            //去除过度属性
+            imgNode.style.transition = 'none'
+            //时间检测
+            divNode.nowTime = Date.now
         })
         divNode.addEventListener('touchmove', (e) => {
+            //获取当前元素移动的位置
             divNode.x2 = e.changedTouches[0].clientX
+
+            //计算差值
+            var endX = divNode.x2 - divNode.x + divNode.startX
+
+            //赋值
+            imgNode.style.left = endX + 'px'
         })
         divNode.addEventListener('touchend', (e) => {
-            var endX = divNode.x2 - divNode.x
-            console.log('endX', endX);
-            var nowLeft = imgNode.offsetLeft
-            console.log('nowLeft', nowLeft);
-            imgNode.style.left = endX < 0 ? nowLeft - 300 + 'px' : nowLeft + 300 + 'px'
-            console.log('imgNode.style.left', imgNode.style.left);
+            // 此种方法不完善
+            // var endX = divNode.x2 - divNode.x
+            // console.log('endX', endX);
+            // var nowLeft = imgNode.offsetLeft
+            // console.log('nowLeft', nowLeft);
+            // imgNode.style.left = endX < 0 ? nowLeft - 300 + 'px' : nowLeft + 300 + 'px'
+            // console.log('imgNode.style.left', imgNode.style.left);
+
+            //获取点击抬起的时候的位置
+            divNode.x2 = e.changedTouches[0].clientX
+
+            // //与最初的位置进行比较
+            // if (divNode.x > divNode.x2) {
+            //     index++
+            // } else if (divNode.x < divNode.x2) {
+            //     index--
+            // }
+
+            //时间检测
+            divNode.nowTime2 = Date.now
+            if (Math.abs(divNode.nowTime2 - divNode.nowTime) < 500) {
+                index++
+            } else {
+                //距离检测
+                if (Math.abs(divNode.x2 - divNode.x) > divNode.offsetWidth / 2 && divNode.x2 - divNode.x < 0) {
+                    index++
+                } else if (Math.abs(divNode.x2 - divNode.x) > divNode.offsetWidth / 2 && divNode.x2 - divNode.x > 0) {
+                    index--
+                }
+                //边界
+                if (index < 0) {
+                    index = len - 1
+                }
+                if (index > len - 1) {
+                    index = 0
+                }
+
+                // var pointers = document.querySelectorAll('.pointer')
+                for (var i = 0; i < pointers.length; i++) {
+                    pointers[i].classList.remove('active')
+                }
+                console.log('index', index);
+                pointers[index].classList.add('active')
+                imgNode.style.left = -index * 300 + 'px'
+                imgNode.style.transition = 'all 0.5s'
+            }
+
         })
+        //初始化元素样式
+        function init() {
+            //获取第一个幻灯片的高度
+            var slides = document.querySelectorAll('.swiper-slide');
+            //容器设置 高度
+            window.onload = function () {
+                var h = slides[0].offsetHeight;
+                //设置容器的高度
+                divNode.style.height = h + 'px';
+            }
+
+            //包裹元素的宽度设置
+            imgNode.style.width = len * 100 + '%';
+
+            //设置子元素的宽度
+            slides.forEach(function (slide) {
+                //设置宽度
+                slide.style.width = 100 / len + '%';
+            });
+
+            //根据幻灯片数量动态创建导航点
+            for (var i = 0; i <= len - 1; i++) {
+                //创建span 标签
+                var span = document.createElement('span');
+                span.classList.add('pointer')
+                if (i == 0) {
+                    span.classList.add('active')
+                }
+                //插入到导航元素中
+                pagination.appendChild(span);
+            }
+            console.log('len', len);
+            //获取导航点元素
+            pointers = document.querySelectorAll('.swiper-pointers span');
+        }
+
+        init();
     </script>
     <style>
         * {
@@ -68,6 +168,47 @@
         .swiper-slide img {
             width: 300px;
             height: 300px;
+        }
+
+        .swiper-pointers {
+            position: relative;
+            height: 300px;
+        }
+
+        .pointer {
+            z-index: 100;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #999999;
+        }
+
+        .pointer:first-child {
+            margin-left: 0;
+        }
+
+        .pointer:nth-child(2) {
+            margin-left: 20px;
+        }
+
+        .pointer:nth-child(3) {
+            margin-left: 40px;
+        }
+
+        .pointer:nth-child(4) {
+            margin-left: 60px;
+        }
+
+        .pointer:nth-child(5) {
+            margin-left: 80px;
+        }
+
+        .active {
+            background-color: red;
         }
     </style>
 </body>

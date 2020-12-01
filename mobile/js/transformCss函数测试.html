@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="transfromCss.js"></script>
+</head>
+<body>
+    <div style="width: 100px;height: 100px;background-color:red;" class="div"></div>
+    <script>
+        console.log(window);
+        var divNode=document.querySelector('.div')
+        transformCss(divNode,'translateX',-100);
+        transformCss(divNode,'rotate',100);
+        transformCss(divNode,'scale',2);
+        // transformCss(divNode,'translateX');
+        transformCss(divNode,'translateX',-100);
+    </script>
+</body>
+</html>

@@ -181,7 +181,13 @@ const router=new VueRouter({
       {
         path:'*',
         component:error
-      }
+      },
+      {
+        path:'/Test',
+        name:'Test',
+        component:()=>import('../views/Test.vue')
+      },
+
     ]
     //ps:路由的匹配具有优先级，谁先定义谁先匹配
 })

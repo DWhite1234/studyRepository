@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航拖拽效果</title>
+    <meta name="viewport" content="width:device-width,initial-scale=1.0">
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>首页</li>
+            <li>模块一</li>
+            <li>模块二</li>
+            <li>模块三</li>
+            <li>模块四</li>
+            <li>模块五</li>
+            <li>模块六</li>
+            <li>模块七</li>
+            <li>模块八</li>
+            <li>模块九</li>
+            <li>模块十</li>
+        </ul>
+    </div>
+
+    <style>
+
+        .box{
+            width: 7.5rem;
+            height: 1rem;
+            margin: 0 auto;
+            border: 1px solid;
+            overflow: hidden;
+            position: relative;
+        }
+        ul{
+            margin:0 !important;
+            padding: 0;
+            width: 11rem;
+            height: 1rem;
+            position: absolute;
+            left: 0;
+        }
+        ul li{
+            float: left;
+            list-style: none;
+            width: 1rem;
+            height: 1rem;
+            font-size :0.3rem
+        }
+        li:nth-child(2n){
+            background-color: #2c3e50;
+        }
+        li:nth-child(2n+1){
+            background-color: #42b983;
+        }
+    </style>
+    <script>
+        //移动端自适应效果
+    //    1.设置完美视口
+    //    2.设置font-size,当前视口的1/10为1rem
+        var styleNode=document.querySelector('html')
+        styleNode.style.fontSize=document.documentElement.clientWidth/7.5+'px'
+        window.onresize=function(){
+            styleNode.style.fontSize=document.documentElement.clientWidth/7.5+'px'
+        }
+
+        //拖拽效果
+    //    1.获取第一次点击的位置信息
+        var boxNode=document.querySelector('.box')
+        var ulNode=document.querySelector('ul')
+        var time=null
+        boxNode.addEventListener('touchstart',function (e){
+            //获取当前位置信息
+            this.x=e.changedTouches[0].clientX
+            //获取内层元素的水平偏移量
+            this.left=ulNode.offsetLeft
+            //获取当前的事件
+            this.time=Date.now()
+        })
+        boxNode.addEventListener('touchmove',function (e) {
+            //获取移动的位置信息
+            this._x=e.changedTouches[0].clientX
+            this.end=this._x-this.x+this.left
+
+            //添加橡皮筋效果
+            //1.左边界情况,偏移量为0
+            if(this.left==0){
+                this.end=(this._x-this.x)/2
+            }
+            //右边界,偏移量为整个内容的宽度
+            if(this.left==-187){
+                this.end=this.left+(this._x-this.x)/2
+            }
+
+            //设置拖动的位移
+            ulNode.style.left=this.end+'px'
+        //    添加过度效果
+            ulNode.style.transition='none'
+
+
+
+
+        })
+        boxNode.addEventListener('touchend',function (e) {
+            //计算时间差
+            time=Date.now()-this.time
+            //当前移动的距离
+            let s=this.left
+            //计算速度
+            let v=s/time
+            //计算将要继续移动的位移
+            let continueS=v*100
+            //设置距离
+            ulNode.style.left=this.end+continueS+'px'
+            //设置惯性过度
+            ulNode.style.transition='0.5s ease-out'
+
+            // 设置回弹效果
+            if(this.end>100){
+                this.end=0
+                ulNode.style.left=this.end+'px'
+                ulNode.style.transition='0.5s cubic-bezier(.13,.32,.16,.8)'
+            }
+            if(this.end<-187){
+                this.end=-187
+                ulNode.style.left=this.end+'px'
+                ulNode.style.transition='0.5s cubic-bezier(.13,.32,.16,.8)'
+            }
+
+        })
+    </script>
+</body>
+</html>
